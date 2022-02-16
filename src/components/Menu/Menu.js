@@ -8,7 +8,7 @@ import User from "../../icons/user.svg";
 import Fill from "../../icons/fill.svg";
 import BellRing from "../../icons/bell-ring.svg";
 import TimePast from "../../icons/time-past.svg";
-import Gift from "../../icons/gift.svg";
+// import Gift from "../../icons/gift.svg";
 import AngleSmallRight from "../../icons/angle-small-right.svg";
 import { Link } from "react-router-dom";
 const Menu = () => {
