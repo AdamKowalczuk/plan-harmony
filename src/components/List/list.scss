@@ -1,0 +1,31 @@
+$pink: #866dfa;
+$gray: #768eb9;
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-evenly;
+  height: calc(100vh - 70px);
+  overflow: scroll;
+  .link {
+    margin: 3% 3% 3% 7%;
+  }
+}
+.list-topic {
+  width: 40vw;
+  height: 40vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.list-topic:nth-child(odd) {
+  margin: 3% 3% 3% 7%;
+}
+.list-topic:nth-child(even) {
+  margin: 3% 7% 3% 3%;
+}
+.list-topic h3 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  color: $gray;
+}
