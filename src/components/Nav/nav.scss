@@ -1,14 +1,18 @@
 $pink: #866dfa;
 $gray: #768eb9;
 
-.nav {
+nav {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  position: fixed;
+  top: 0px;
+  width: calc(100vw - 20px);
+  background: #e4ebf5;
   // position: sticky;
   // top: 0;
 }
-.nav h2 {
+nav h2 {
   margin: auto;
   color: $gray;
 }

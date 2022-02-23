@@ -1,0 +1,11 @@
+export const SET_ACTUAL_LIST = "SET_ACTUAL_LIST";
+export const CHANGE_MODE = "CHANGE_MODE";
+export const CHANGE_NOTIFICATIONS = "CHANGE_NOTIFICATIONS";
+export const CHANGE_FORM_NAME = "CHANGE_FORM_NAME";
+export const CHANGE_FORM_TYPE = "CHANGE_FORM_TYPE";
+export const CHANGE_FORM_ICON = "CHANGE_FORM_ICON";
+
+export const ADD_TO_LIST = "ADD_TO_LIST";
+export const EDIT_LIST = "EDIT_LIST";
+export const DELETE_LIST = "DELETE_LIST";
+export const RESET_FORM = "RESET_FORM";

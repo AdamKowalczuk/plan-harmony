@@ -4,8 +4,9 @@ $gray: #768eb9;
   display: flex;
   flex-wrap: wrap;
   // justify-content: space-evenly;
-  height: calc(100vh - 70px);
+  // height: calc(100vh - 70px);
   overflow: scroll;
+  margin-top: 70px;
   .link {
     margin: 3% 3% 3% 7%;
   }
@@ -17,6 +18,11 @@ $gray: #768eb9;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: $pink;
+  }
 }
 .list-topic:nth-child(odd) {
   margin: 3% 3% 3% 7%;

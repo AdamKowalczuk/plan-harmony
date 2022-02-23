@@ -1,5 +1,20 @@
+$pink: #866dfa;
+$gray: #768eb9;
 .concave {
   border-radius: 10px;
   background: #e4ebf5;
   box-shadow: inset 5px 5px 10px #c8d0e7, inset -5px -5px 10px #ffffff;
+}
+.input-text {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e4ebf5;
+  font-size: 1.17em;
+}
+.input-text::placeholder {
+  color: $gray;
+}
+.input-text:focus-visible {
+  outline: none;
 }
