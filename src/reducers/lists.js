@@ -5,49 +5,49 @@ import Plane from "../list-icons/Plane";
 import Book from "../list-icons/Book";
 import Dollar from "../list-icons/Dollar";
 import Edit from "../list-icons/Edit";
-import { ADD_TO_LIST } from "../constants/actionTypes";
+import { ADD_TO_LIST, ADD_NEW_EXERCISE } from "../constants/actionTypes";
 
 let list = [
   {
     name: "Lista zadań",
     icon: <ListCheck />,
     type: "list",
-    exercies: [],
+    exercises: [],
     finishedExercises: [],
   },
   {
     name: "Lista zakupów",
     icon: <ShoppingBag />,
     type: "list",
-    exercies: [],
+    exercises: [],
     finishedExercises: [],
   },
   {
     name: "Cele na rok",
     icon: <Plane />,
     type: "list",
-    exercies: [],
+    exercises: [],
     finishedExercises: [],
   },
   {
     name: "Książki",
     icon: <Book />,
     type: "list",
-    exercies: [],
+    exercises: [],
     finishedExercises: [],
   },
   {
     name: "Wydatki",
     icon: <Dollar />,
     type: "list",
-    exercies: [],
+    exercises: [],
     finishedExercises: [],
   },
   {
     name: "Notatki",
     icon: <Edit />,
     type: "list",
-    exercies: [],
+    exercises: [],
     finishedExercises: [],
   },
 ];
@@ -57,6 +57,10 @@ const lists = (lists = list, action) => {
     case ADD_TO_LIST:
       newList = lists;
       newList.push(action.payload);
+      return newList;
+    case ADD_NEW_EXERCISE:
+      newList = lists;
+      newList[action.id].exercises.push(action.payload);
       return newList;
     default:
       return lists;

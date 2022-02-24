@@ -3,8 +3,8 @@
   "name": "Aplikacja do planowania",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#E4EBF5",
+  "background_color": "#E4EBF5",
   "orientation": "portrait-primary",
   "icons":
   [
