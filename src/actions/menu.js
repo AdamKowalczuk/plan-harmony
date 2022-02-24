@@ -1,8 +1,8 @@
-import {
-  SET_ACTUAL_LIST,
-  CHANGE_MODE,
-  CHANGE_NOTIFICATIONS,
-} from "../constants/actionTypes";
+// import {
+//   SET_ACTUAL_LIST,
+//   CHANGE_MODE,
+//   CHANGE_NOTIFICATIONS,
+// } from "../constants/actionTypes";
 
 export const setActualList = (actualList) => {
   return {

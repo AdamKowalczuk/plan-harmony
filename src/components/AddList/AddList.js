@@ -34,17 +34,17 @@ import {
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToList } from "../../actions/lists";
-function importAll(r) {
-  let icons = [];
-  r.keys().map((item, index) => {
-    icons.push(r(item));
-  });
-  return icons;
-}
+// function importAll(r) {
+//   let icons = [];
+//   r.keys().map((item, index) => {
+//     icons.push(r(item));
+//   });
+//   return icons;
+// }
 
-const icons = importAll(
-  require.context("../../list-icons", false, /\.(js|jpe?g|svg)$/)
-);
+// const icons = importAll(
+//   require.context("../../list-icons", false, /\.(js|jpe?g|svg)$/)
+// );
 
 const AddList = () => {
   const dispatch = useDispatch();
@@ -92,7 +92,6 @@ const AddList = () => {
             <input
               type="text"
               className="input-text"
-              // value={form.name}
               placeholder="Nazwa..."
               onChange={(e) => {
                 dispatch(changeFormName(e.target.value));
@@ -109,12 +108,12 @@ const AddList = () => {
             <div className="add-list-button-container">
               <div
                 className={
-                  form.type === true
+                  form.type === "list"
                     ? "button-concave concave"
                     : "button-concave "
                 }
                 onClick={() => {
-                  dispatch(changeFormType(true));
+                  dispatch(changeFormType("list"));
                 }}
               >
                 <h3>Lista</h3>
@@ -122,12 +121,12 @@ const AddList = () => {
 
               <div
                 className={
-                  form.type === false
+                  form.type === "note"
                     ? "button-concave concave"
                     : "button-concave "
                 }
                 onClick={() => {
-                  dispatch(changeFormType(false));
+                  dispatch(changeFormType("note"));
                 }}
               >
                 <h3>Notatki</h3>
@@ -146,6 +145,7 @@ const AddList = () => {
                 return (
                   <div
                     className={color === id ? "colored" : "not-colored"}
+                    key={id}
                     onClick={() => {
                       dispatch(changeFormIcon(component));
                       changeColor(id);

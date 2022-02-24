@@ -8,7 +8,8 @@ const newExercise = (newExercise = "", action) => {
     case CHANGE_NEW_EXERCISE_NAME:
       return action.payload;
     case RESET_NEW_EXERCISE_INPUT:
-      return "";
+      let exercise = "";
+      return exercise;
     default:
       return newExercise;
   }

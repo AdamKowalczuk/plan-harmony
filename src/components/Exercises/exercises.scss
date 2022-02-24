@@ -3,6 +3,7 @@ $gray: #768eb9;
 
 .exercises {
   margin-top: 70px;
+  margin-bottom: 84px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,6 +32,7 @@ $gray: #768eb9;
     padding: 15px 20px;
     position: fixed;
     bottom: 0;
+    background-color: #e4ebf5;
     .add-exercise {
       padding: 15px 20px;
       width: 100%;

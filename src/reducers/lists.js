@@ -5,7 +5,12 @@ import Plane from "../list-icons/Plane";
 import Book from "../list-icons/Book";
 import Dollar from "../list-icons/Dollar";
 import Edit from "../list-icons/Edit";
-import { ADD_TO_LIST, ADD_NEW_EXERCISE } from "../constants/actionTypes";
+import {
+  ADD_TO_LIST,
+  ADD_NEW_EXERCISE,
+  EDIT_NOTE,
+  DELETE_EXERCISE,
+} from "../constants/actionTypes";
 
 let list = [
   {
@@ -46,8 +51,8 @@ let list = [
   {
     name: "Notatki",
     icon: <Edit />,
-    type: "list",
-    exercises: [],
+    type: "note",
+    note: "",
     finishedExercises: [],
   },
 ];
@@ -62,6 +67,16 @@ const lists = (lists = list, action) => {
       newList = lists;
       newList[action.id].exercises.push(action.payload);
       return newList;
+    case EDIT_NOTE:
+      newList = lists;
+      newList[action.id].note = action.payload;
+      return newList;
+    case DELETE_EXERCISE:
+      newList = lists;
+      newList[action.actualList].exercises.splice(action.id, 1);
+      // newList[action.actualList].exercises.pop();
+      return { ...newList };
+    // return { ...actualForm, name: "", type: true, icon: "" };
     default:
       return lists;
   }

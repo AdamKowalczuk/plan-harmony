@@ -2,7 +2,6 @@ import "./App.css";
 import List from "./components/List/List.js";
 import Exercises from "./components/Exercises/Exercises.js";
 import Menu from "./components/Menu/Menu.js";
-import Notes from "./components/Notes/Notes.js";
 import Profile from "./components/Profile/Profile.js";
 
 import React from "react";
@@ -24,9 +23,6 @@ function App() {
           </Route>
           <Route path="/menu">
             <Menu />
-          </Route>
-          <Route path="/notes">
-            <Notes />
           </Route>
           <Route path="/profile">
             <Profile />

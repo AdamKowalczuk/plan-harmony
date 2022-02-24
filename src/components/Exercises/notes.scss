@@ -9,7 +9,7 @@ $gray: #768eb9;
   overflow: hidden;
   margin-top: 70px;
   textarea {
-    width: calc(86% - 40px);
+    width: calc(92% - 40px);
     background-color: transparent;
     border-radius: 10px;
     font-size: 20px;
@@ -17,16 +17,17 @@ $gray: #768eb9;
     border: 0;
     outline: none;
     padding: 10px;
+    height: 80vh;
   }
-  .edit-button {
-    display: flex;
-    align-items: center;
-    color: $gray;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    width: calc(86% - 40px);
-    padding: 10px;
-    margin-top: 30px;
-  }
+  // .edit-button {
+  //   display: flex;
+  //   align-items: center;
+  //   color: $gray;
+  //   margin: 10px;
+  //   display: flex;
+  //   justify-content: center;
+  //   width: calc(86% - 40px);
+  //   padding: 10px;
+  //   margin-top: 30px;
+  // }
 }

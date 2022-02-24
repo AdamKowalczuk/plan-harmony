@@ -1,10 +1,10 @@
-import {
-  ADD_TO_LIST,
-  CHANGE_ACTUAL_LIST,
-  EDIT_LIST,
-  DELETE_LIST,
-  ADD_NEW_EXERCISE,
-} from "../constants/actionTypes";
+// import {
+//   ADD_TO_LIST,
+//   CHANGE_ACTUAL_LIST,
+//   EDIT_LIST,
+//   DELETE_LIST,
+//   ADD_NEW_EXERCISE,
+// } from "../constants/actionTypes";
 
 export const addToList = (newItem) => {
   return {

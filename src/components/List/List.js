@@ -4,12 +4,6 @@ import "./list.scss";
 import Nav from "../Nav/Nav";
 import { useSelector, useDispatch } from "react-redux";
 import { changeActualList } from "../../actions/lists";
-// import Icon1 from "../../icons/list-check.svg";
-// import Icon2 from "../../icons/shopping-bag.svg";
-// import Icon3 from "../../icons/plane.svg";
-// import Icon4 from "../../icons/book.svg";
-// import Icon5 from "../../icons/dollar.svg";
-// import Icon6 from "../../icons/edit.svg";
 import Plus from "../../icons/Plus";
 import { Link } from "react-router-dom";
 
@@ -32,7 +26,7 @@ const SingleList = (props) => {
   );
 };
 const List = () => {
-  const lists = useSelector((state) => state.lists);
+  let lists = useSelector((state) => state.lists);
   return (
     <>
       <Nav text="Lista zadań" />
