@@ -6,6 +6,8 @@ import darkMode from "./darkMode";
 import lists from "./lists";
 import notifications from "./notifications";
 import form from "./form";
+import history from "./history";
+import finishedTask from "./finishedTask";
 
 export const reducers = combineReducers({
   actualList,
@@ -14,4 +16,6 @@ export const reducers = combineReducers({
   notifications,
   form,
   newExercise,
+  history,
+  finishedTask,
 });

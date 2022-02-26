@@ -72,11 +72,12 @@ const lists = (lists = list, action) => {
       newList[action.id].note = action.payload;
       return newList;
     case DELETE_EXERCISE:
-      newList = lists;
-      newList[action.actualList].exercises.splice(action.id, 1);
-      // newList[action.actualList].exercises.pop();
-      return { ...newList };
-    // return { ...actualForm, name: "", type: true, icon: "" };
+      return lists.map((list, id) => {
+        if (id === action.actualList) {
+          newList[action.actualList].exercises.splice(action.id, 1);
+        }
+        return list;
+      });
     default:
       return lists;
   }

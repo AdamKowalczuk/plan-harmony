@@ -2,6 +2,7 @@ import "./App.css";
 import List from "./components/List/List.js";
 import Exercises from "./components/Exercises/Exercises.js";
 import Menu from "./components/Menu/Menu.js";
+import History from "./components/History/History.js";
 import Profile from "./components/Profile/Profile.js";
 
 import React from "react";
@@ -12,7 +13,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route exact path="/">
+          <Route path="/" exact>
             <List />
           </Route>
           <Route path="/add-list">
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/history">
+            <History />
           </Route>
         </Switch>
       </div>

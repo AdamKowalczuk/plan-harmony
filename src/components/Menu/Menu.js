@@ -1,11 +1,11 @@
 import React from "react";
 import "./menu.scss";
 import Nav from "../Nav/Nav";
-import { changeMode, changeNotifications } from "../../actions/menu";
+import { changeMode, changeNotifications } from "../../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "../Convex/convex.scss";
 import "../Concave/concave.scss";
-import User from "../../icons/User.js";
+// import User from "../../icons/User.js";
 import Fill from "../../icons/Fill.js";
 import BellRing from "../../icons/BellRing";
 import TimePast from "../../icons/TimePast";
@@ -19,7 +19,7 @@ const Menu = () => {
     <>
       <Nav text="Menu" />
       <div className="menu">
-        <div className="convex menu-option1">
+        {/* <div className="convex menu-option1">
           <div className="menu-name">
             <User />
             <h3>Profil</h3>
@@ -32,7 +32,7 @@ const Menu = () => {
               <AngleSmallRight />
             </div>
           </Link>
-        </div>
+        </div> */}
         <div className="convex menu-option2">
           <div className="menu-name">
             <Fill />
@@ -99,12 +99,14 @@ const Menu = () => {
             <h3>Historia</h3>
           </div>
 
-          <div
-            className="convex-icon"
-            style={{ width: "30px", height: "30px" }}
-          >
-            <AngleSmallRight />
-          </div>
+          <Link to="/history">
+            <div
+              className="convex-icon"
+              style={{ width: "30px", height: "30px" }}
+            >
+              <AngleSmallRight />
+            </div>
+          </Link>
         </div>
         {/* <div className="convex menu-option1">
           <div className="menu-name">

@@ -6,17 +6,25 @@ import "./notes.scss";
 import { useSelector, useDispatch } from "react-redux";
 import ArrowSmallUp from "../../icons/ArrowSmallUp";
 import Nav from "../Nav/Nav";
+import moment from "moment";
 
 import {
   changeNewExerciseName,
   resetNewExerciseInput,
   editNote,
   deleteExercise,
-} from "../../actions/newExercise";
-import { addNewExercise } from "../../actions/lists";
+  addNewExercise,
+  addToHistory,
+  addToNumber,
+} from "../../actions/actions";
 
 const SingleExercise = (props) => {
   let actualList = useSelector((state) => state.actualList);
+  let finishedTask = useSelector((state) => state.finishedTask);
+  let dateYear = moment().format("YYYY");
+  let dateMonth = moment().format("MM");
+  let dateDay = moment().format("DD");
+  let date = new Date(dateYear, dateMonth, dateDay);
   const dispatch = useDispatch();
   return (
     <>
@@ -24,6 +32,8 @@ const SingleExercise = (props) => {
         className="convex single-exercise"
         onClick={() => {
           dispatch(deleteExercise(actualList, props.id));
+          dispatch(addToHistory(props.exercise, date));
+          dispatch(addToNumber(finishedTask));
         }}
       >
         <div className="concave w40 animated-button">

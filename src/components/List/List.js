@@ -3,7 +3,7 @@ import "../Convex/convex.scss";
 import "./list.scss";
 import Nav from "../Nav/Nav";
 import { useSelector, useDispatch } from "react-redux";
-import { changeActualList } from "../../actions/lists";
+import { changeActualList } from "../../actions/actions";
 import Plus from "../../icons/Plus";
 import { Link } from "react-router-dom";
 
@@ -27,6 +27,7 @@ const SingleList = (props) => {
 };
 const List = () => {
   let lists = useSelector((state) => state.lists);
+
   return (
     <>
       <Nav text="Lista zadań" />

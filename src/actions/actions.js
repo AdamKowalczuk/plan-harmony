@@ -1,0 +1,125 @@
+export const addToList = (newItem) => {
+  return {
+    type: "ADD_TO_LIST",
+    payload: newItem,
+  };
+};
+
+export const changeActualList = (actualList) => {
+  return {
+    type: "CHANGE_ACTUAL_LIST",
+    payload: actualList,
+  };
+};
+
+export const addNewExercise = (newExercise, id) => {
+  return {
+    type: "ADD_NEW_EXERCISE",
+    payload: newExercise,
+    id: id,
+  };
+};
+
+export const changeNewExerciseName = (newValue) => {
+  return {
+    type: "CHANGE_NEW_EXERCISE_NAME",
+    payload: newValue,
+  };
+};
+export const resetNewExerciseInput = () => {
+  return {
+    type: "RESET_NEW_EXERCISE_INPUT",
+  };
+};
+export const editNote = (newNote, id) => {
+  return {
+    type: "EDIT_NOTE",
+    payload: newNote,
+    id: id,
+  };
+};
+
+export const deleteExercise = (actualList, id) => {
+  return {
+    type: "DELETE_EXERCISE",
+    actualList: actualList,
+    id: id,
+  };
+};
+
+export const setActualList = (actualList) => {
+  return {
+    type: "SET_ACTUAL_QUIZ",
+    payload: !actualList,
+  };
+};
+
+export const changeMode = (selectedMode) => {
+  return {
+    type: "CHANGE_MODE",
+    payload: selectedMode,
+  };
+};
+
+export const changeNotifications = (selectedNotifications) => {
+  return {
+    type: "CHANGE_NOTIFICATIONS",
+    payload: selectedNotifications,
+  };
+};
+
+export const changeFormName = (actualName) => {
+  return {
+    type: "CHANGE_FORM_NAME",
+    payload: actualName,
+  };
+};
+
+export const changeFormType = (selectedType) => {
+  return {
+    type: "CHANGE_FORM_TYPE",
+    payload: selectedType,
+  };
+};
+
+export const changeFormIcon = (selectedIcon) => {
+  return {
+    type: "CHANGE_FORM_ICON",
+    payload: selectedIcon,
+  };
+};
+
+export const resetForm = () => {
+  return {
+    type: "RESET_FORM",
+  };
+};
+
+export const addToHistory = (name, time) => {
+  return {
+    type: "ADD_TO_HISTORY",
+    name: name,
+    time: time,
+  };
+};
+
+export const addToNumber = (number) => {
+  return {
+    type: "ADD_TO_NUMBER",
+    payload: number + 1,
+  };
+};
+
+//   export const editList = (selectedType) => {
+//     return {
+//       type: "CHANGE_FORM_TYPE",
+//       payload: selectedType,
+//     };
+//   };
+
+//   export const deleteList = (selectedIcon) => {
+//     return {
+//       type: "CHANGE_FORM_ICON",
+//       payload: selectedIcon,
+//     };
+//   };

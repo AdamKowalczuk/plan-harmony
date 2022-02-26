@@ -11,7 +11,7 @@ import {
   changeFormType,
   changeFormIcon,
   resetForm,
-} from "../../actions/form";
+} from "../../actions/actions";
 import {
   Backpack,
   Beer,
@@ -33,18 +33,7 @@ import {
 } from "../../list-icons/All";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addToList } from "../../actions/lists";
-// function importAll(r) {
-//   let icons = [];
-//   r.keys().map((item, index) => {
-//     icons.push(r(item));
-//   });
-//   return icons;
-// }
-
-// const icons = importAll(
-//   require.context("../../list-icons", false, /\.(js|jpe?g|svg)$/)
-// );
+import { addToList } from "../../actions/actions";
 
 const AddList = () => {
   const dispatch = useDispatch();

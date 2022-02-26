@@ -38,6 +38,9 @@ $gray: #768eb9;
       width: 100%;
       margin-right: 10px;
       color: $gray;
+      input {
+        color: $gray;
+      }
     }
   }
 }
