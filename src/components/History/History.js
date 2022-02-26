@@ -19,7 +19,7 @@ const History = () => {
   function checkTodayFinished() {
     let day;
     day = 0;
-    history.map((item) => {
+    history.foreach((item) => {
       let diff = new DateDiff(newDate, item.time);
       if (diff.days() < 1) {
         day++;
