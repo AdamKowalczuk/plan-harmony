@@ -1,10 +1,3 @@
-// import { SET_ACTUAL_LIST } from "../constants/actionTypes";
-import ListCheck from "../list-icons/ListCheck";
-import ShoppingBag from "../list-icons/ShoppingBag";
-import Plane from "../list-icons/Plane";
-import Book from "../list-icons/Book";
-import Dollar from "../list-icons/Dollar";
-import Edit from "../list-icons/Edit";
 import {
   ADD_TO_LIST,
   ADD_NEW_EXERCISE,
@@ -15,42 +8,42 @@ import {
 let list = [
   {
     name: "Lista zadań",
-    icon: <ListCheck />,
+    icon: "ListCheck",
     type: "list",
     exercises: [],
     finishedExercises: [],
   },
   {
     name: "Lista zakupów",
-    icon: <ShoppingBag />,
+    icon: "ShoppingBag",
     type: "list",
     exercises: [],
     finishedExercises: [],
   },
   {
     name: "Cele na rok",
-    icon: <Plane />,
+    icon: "Plane",
     type: "list",
     exercises: [],
     finishedExercises: [],
   },
   {
     name: "Książki",
-    icon: <Book />,
+    icon: "Book",
     type: "list",
     exercises: [],
     finishedExercises: [],
   },
   {
     name: "Wydatki",
-    icon: <Dollar />,
+    icon: "Dollar",
     type: "list",
     exercises: [],
     finishedExercises: [],
   },
   {
     name: "Notatki",
-    icon: <Edit />,
+    icon: "Edit",
     type: "note",
     note: "",
     finishedExercises: [],

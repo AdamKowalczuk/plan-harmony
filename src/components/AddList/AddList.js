@@ -40,23 +40,23 @@ const AddList = () => {
   let form = useSelector((state) => state.form);
   const [color, setColor] = useState(0);
   let components = [
-    <Backpack />,
-    <Beer />,
-    <CakeBirthday />,
-    <Flag />,
-    <Gamepad />,
-    <Gift />,
-    <Gym />,
-    <Hamburger />,
-    <HearthArrow />,
-    <Medicine />,
-    <MusicAlt />,
-    <Paw />,
-    <Plane />,
-    <Snowboarding />,
-    <Thumbtack />,
-    <Trophy />,
-    <VideoCamera />,
+    <Backpack icon="Backpack" />,
+    <Beer icon="Beer" />,
+    <CakeBirthday icon="CakeBirthday" />,
+    <Flag icon="Flag" />,
+    <Gamepad icon="Gamepad" />,
+    <Gift icon="Gift" />,
+    <Gym icon="Gym" />,
+    <Hamburger icon="Hamburger" />,
+    <HearthArrow icon="HearthArrow" />,
+    <Medicine icon="Medicine" />,
+    <MusicAlt icon="MusicAlt" />,
+    <Paw icon="Paw" />,
+    <Plane icon="Plane" />,
+    <Snowboarding icon="Snowboarding" />,
+    <Thumbtack icon="Thumbtack" />,
+    <Trophy icon="Trophy" />,
+    <VideoCamera icon="VideoCamera" />,
   ];
 
   const changeColor = (id) => {
@@ -136,7 +136,7 @@ const AddList = () => {
                     className={color === id ? "colored" : "not-colored"}
                     key={id}
                     onClick={() => {
-                      dispatch(changeFormIcon(component));
+                      dispatch(changeFormIcon(component.props.icon));
                       changeColor(id);
                     }}
                   >
