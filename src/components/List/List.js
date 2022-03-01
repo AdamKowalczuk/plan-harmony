@@ -84,7 +84,6 @@ function returnIcon(icon) {
 
 const SingleList = (props) => {
   const dispatch = useDispatch();
-  console.log(props.icon);
   return (
     <div
       className="convex list-topic"
@@ -113,13 +112,13 @@ const List = () => {
             <SingleList name={list.name} key={id} id={id} icon={list.icon} />
           );
         })}
-        <Link to="/add-list" className="link">
-          <div className="convex list-topic">
+        <div className="convex list-topic">
+          <Link to="/add-list" className="link">
             <div className="convex-icon w80">
               <Plus />
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </>
   );

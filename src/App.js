@@ -8,6 +8,7 @@ import Profile from "./components/Profile/Profile.js";
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import AddList from "./components/AddList/AddList";
+import EditList from "./components/AddList/EditList";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/add-list">
             <AddList />
+          </Route>
+          <Route path="/edit-list">
+            <EditList />
           </Route>
           <Route path="/exercises">
             <Exercises />

@@ -4,6 +4,19 @@ export const addToList = (newItem) => {
     payload: newItem,
   };
 };
+export const editList = (editedList, listId) => {
+  return {
+    type: "EDIT_LIST",
+    editedList: editedList,
+    listId: listId,
+  };
+};
+export const deleteList = (listId) => {
+  return {
+    type: "DELETE_LIST",
+    listId: listId,
+  };
+};
 
 export const changeActualList = (actualList) => {
   return {

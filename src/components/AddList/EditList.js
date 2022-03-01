@@ -6,13 +6,7 @@ import "../Menu/menu.scss";
 import Balloons from "../../icons/Balloons";
 import CrossSmall from "../../icons/CrossSmall";
 import Layers from "../../icons/Layers";
-
-import {
-  changeFormName,
-  changeFormType,
-  changeFormIcon,
-  resetForm,
-} from "../../actions/actions";
+import Trash from "../../icons/Trash";
 import {
   Backpack,
   Beer,
@@ -31,34 +25,69 @@ import {
   Thumbtack,
   Trophy,
   VideoCamera,
+  ListCheck,
+  ShoppingBag,
+  Book,
+  Dollar,
+  Edit,
 } from "../../list-icons/All";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addToList } from "../../actions/actions";
+import { editList, deleteList } from "../../actions/actions";
+let components = [
+  <ListCheck icon="ListCheck" />,
+  <ShoppingBag icon="ShoppingBag" />,
+  <Book icon="Book" />,
+  <Dollar icon="Dollar" />,
+  <Edit icon="Edit" />,
 
-const AddList = () => {
+  <Backpack icon="Backpack" />,
+  <Beer icon="Beer" />,
+  <CakeBirthday icon="CakeBirthday" />,
+  <Flag icon="Flag" />,
+  <Gamepad icon="Gamepad" />,
+  <Gift icon="Gift" />,
+  <Gym icon="Gym" />,
+  <Hamburger icon="Hamburger" />,
+  <HearthArrow icon="HearthArrow" />,
+  <Medicine icon="Medicine" />,
+  <MusicAlt icon="MusicAlt" />,
+  <Paw icon="Paw" />,
+  <Plane icon="Plane" />,
+  <Snowboarding icon="Snowboarding" />,
+  <Thumbtack icon="Thumbtack" />,
+  <Trophy icon="Trophy" />,
+  <VideoCamera icon="VideoCamera" />,
+];
+const EditList = () => {
   const dispatch = useDispatch();
-  let form = useSelector((state) => state.form);
-  const [color, setColor] = useState(0);
-  let components = [
-    <Backpack icon="Backpack" />,
-    <Beer icon="Beer" />,
-    <CakeBirthday icon="CakeBirthday" />,
-    <Flag icon="Flag" />,
-    <Gamepad icon="Gamepad" />,
-    <Gift icon="Gift" />,
-    <Gym icon="Gym" />,
-    <Hamburger icon="Hamburger" />,
-    <HearthArrow icon="HearthArrow" />,
-    <Medicine icon="Medicine" />,
-    <MusicAlt icon="MusicAlt" />,
-    <Paw icon="Paw" />,
-    <Plane icon="Plane" />,
-    <Snowboarding icon="Snowboarding" />,
-    <Thumbtack icon="Thumbtack" />,
-    <Trophy icon="Trophy" />,
-    <VideoCamera icon="VideoCamera" />,
-  ];
+  let actualList = useSelector((state) => state.actualList);
+  let lists = useSelector((state) => state.lists);
+  const initialState = {
+    name: lists[actualList].name,
+    type: lists[actualList].type,
+    icon: lists[actualList].icon,
+    exercises: lists[actualList].exercises,
+  };
+  const [form, setForm] = useState(initialState);
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+  const changeIcon = (icon) => {
+    setForm({ ...form, icon: icon });
+  };
+  const changeType = (type) => {
+    setForm({ ...form, type: type });
+  };
+  function iconId() {
+    for (let i = 0; i < components.length; i++) {
+      if (components[i].props.icon === form.icon) {
+        return i;
+      }
+    }
+  }
+  iconId();
+
+  const [color, setColor] = useState(iconId);
 
   const changeColor = (id) => {
     setColor(id);
@@ -66,26 +95,42 @@ const AddList = () => {
   return (
     <>
       <div className="add-list">
-        <Link to="/">
-          <div className="cross-container">
+        <div className="top-icons">
+          <Link to="/">
             <div
-              className="convex-icon"
-              style={{ width: "50px", height: "50px" }}
+              className="delete-container"
+              onClick={() => {
+                dispatch(deleteList(actualList));
+              }}
             >
-              <CrossSmall />
+              <div
+                className="convex-icon"
+                style={{ width: "50px", height: "50px" }}
+              >
+                <Trash />
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+          <Link to="/exercises">
+            <div className="cross-container">
+              <div
+                className="convex-icon"
+                style={{ width: "50px", height: "50px" }}
+              >
+                <CrossSmall />
+              </div>
+            </div>
+          </Link>
+        </div>
 
         <div className="form-container">
           <div className="concave add-list-name">
             <input
               type="text"
               className="input-text"
-              placeholder="Nazwa..."
-              onChange={(e) => {
-                dispatch(changeFormName(e.target.value));
-              }}
+              name="name"
+              value={form.name}
+              onChange={handleChange}
             />
           </div>
           <div className="convex add-list-type">
@@ -102,8 +147,9 @@ const AddList = () => {
                     ? "button-concave concave"
                     : "button-concave "
                 }
+                name="icon"
                 onClick={() => {
-                  dispatch(changeFormType("list"));
+                  changeType("list");
                 }}
               >
                 <h3>Lista</h3>
@@ -116,7 +162,7 @@ const AddList = () => {
                     : "button-concave "
                 }
                 onClick={() => {
-                  dispatch(changeFormType("note"));
+                  changeType("note");
                 }}
               >
                 <h3>Notatki</h3>
@@ -136,8 +182,9 @@ const AddList = () => {
                   <div
                     className={color === id ? "colored" : "not-colored"}
                     key={id}
+                    name="icon"
                     onClick={() => {
-                      dispatch(changeFormIcon(component.props.icon));
+                      changeIcon(component.props.icon);
                       changeColor(id);
                     }}
                   >
@@ -148,14 +195,13 @@ const AddList = () => {
             </div>
           </div>
           <div className="convex add-list-button">
-            <Link className="link" to="/">
+            <Link className="link" to="/exercises">
               <h3
                 onClick={() => {
-                  dispatch(addToList({ ...form, exercises: [] }));
-                  dispatch(resetForm());
+                  dispatch(editList(form, actualList));
                 }}
               >
-                Dodaj
+                Edytuj
               </h3>
             </Link>
           </div>
@@ -165,4 +211,4 @@ const AddList = () => {
   );
 };
 
-export default AddList;
+export default EditList;

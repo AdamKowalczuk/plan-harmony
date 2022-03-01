@@ -21,6 +21,9 @@ $gray: #768eb9;
     h3 {
       margin: 0;
     }
+    input {
+      color: $gray;
+    }
   }
   .add-list-type {
     display: flex;
@@ -96,4 +99,14 @@ $gray: #768eb9;
 }
 .not-colored {
   opacity: 0.4;
+}
+
+.top-icons {
+  display: flex;
+  justify-content: space-between;
+  .delete-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
 }

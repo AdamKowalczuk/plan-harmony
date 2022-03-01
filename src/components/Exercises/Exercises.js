@@ -5,7 +5,7 @@ import "./exercises.scss";
 import "./notes.scss";
 import { useSelector, useDispatch } from "react-redux";
 import ArrowSmallUp from "../../icons/ArrowSmallUp";
-import Nav from "../Nav/Nav";
+import Nav2 from "../Nav/Nav2";
 import moment from "moment";
 
 import {
@@ -53,7 +53,7 @@ const Exercises = () => {
 
   return (
     <>
-      <Nav text={lists[actualList].name} />
+      <Nav2 text={lists[actualList].name} />
       {lists[actualList].type === "list" ? (
         <div className="exercises">
           {lists[actualList].exercises.map((exercise, id) => {

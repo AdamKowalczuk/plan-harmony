@@ -3,6 +3,8 @@ import {
   ADD_NEW_EXERCISE,
   EDIT_NOTE,
   DELETE_EXERCISE,
+  EDIT_LIST,
+  DELETE_LIST,
 } from "../constants/actionTypes";
 
 let list = [
@@ -56,6 +58,10 @@ const lists = (lists = list, action) => {
       newList = lists;
       newList.push(action.payload);
       return newList;
+    case EDIT_LIST:
+      newList = lists;
+      newList[action.listId] = action.editedList;
+      return newList;
     case ADD_NEW_EXERCISE:
       newList = lists;
       newList[action.id].exercises.push(action.payload);
@@ -64,7 +70,20 @@ const lists = (lists = list, action) => {
       newList = lists;
       newList[action.id].note = action.payload;
       return newList;
+    case DELETE_LIST:
+      newList = lists;
+      newList.splice(action.listId, 1);
+      return newList;
+    // newList = lists;
+    // return lists.map((list, id) => {
+    //   if (id === action.listId) {
+    //     newList.splice(action.listId, 1);
+    //   }
+    //   return list;
+    // });
+
     case DELETE_EXERCISE:
+      newList = lists;
       return lists.map((list, id) => {
         if (id === action.actualList) {
           newList[action.actualList].exercises.splice(action.id, 1);
