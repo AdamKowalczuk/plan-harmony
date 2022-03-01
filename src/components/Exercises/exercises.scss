@@ -44,3 +44,26 @@ $gray: #768eb9;
     }
   }
 }
+
+.no-exercises {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 140px);
+  .convex {
+    padding: 30px;
+    border-radius: 30px;
+  }
+  h3 {
+    margin-top: 20px;
+    font-size: 32px;
+    color: $gray;
+  }
+  h4 {
+    font-size: 20px;
+    margin-top: 30px;
+    color: $gray;
+    opacity: 0.8;
+  }
+}

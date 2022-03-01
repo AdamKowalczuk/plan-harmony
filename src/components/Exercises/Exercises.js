@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import ArrowSmallUp from "../../icons/ArrowSmallUp";
 import Nav2 from "../Nav/Nav2";
 import moment from "moment";
+import List from "../../icons/List2";
 
 import {
   changeNewExerciseName,
@@ -56,9 +57,19 @@ const Exercises = () => {
       <Nav2 text={lists[actualList].name} />
       {lists[actualList].type === "list" ? (
         <div className="exercises">
-          {lists[actualList].exercises.map((exercise, id) => {
-            return <SingleExercise exercise={exercise} id={id} key={id} />;
-          })}
+          {lists[actualList].exercises.length === 0 ? (
+            <div className="no-exercises">
+              <div className="convex">
+                <List />
+              </div>
+              <h3>Brak zadań</h3>
+              <h4>Dodaj nowe zadanie!</h4>
+            </div>
+          ) : (
+            lists[actualList].exercises.map((exercise, id) => {
+              return <SingleExercise exercise={exercise} id={id} key={id} />;
+            })
+          )}
 
           <div className="exercise-add-container">
             <div className="concave add-exercise">

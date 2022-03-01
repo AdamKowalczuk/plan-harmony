@@ -14,7 +14,7 @@ const form = (actualForm = { name: "", type: "list", icon: "" }, action) => {
     case CHANGE_FORM_ICON:
       return { ...actualForm, icon: action.payload };
     case RESET_FORM:
-      return { ...actualForm, name: "", type: true, icon: "" };
+      return { ...actualForm, name: "", type: "list", icon: "Backpack" };
     default:
       return actualForm;
   }
