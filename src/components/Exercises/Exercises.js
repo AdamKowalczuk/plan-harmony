@@ -26,6 +26,7 @@ const SingleExercise = (props) => {
   let dateMonth = moment().format("MM");
   let dateDay = moment().format("DD");
   let date = new Date(dateYear, dateMonth, dateDay);
+
   const dispatch = useDispatch();
   return (
     <>

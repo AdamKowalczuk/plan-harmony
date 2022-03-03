@@ -24,7 +24,7 @@ $gray: #768eb9;
         flex-direction: column;
         align-items: center;
         .progress-bar {
-          border: 2px solid black;
+          // border: 2px solid black;
           width: 60%;
           height: 150px;
           display: flex;
@@ -33,7 +33,7 @@ $gray: #768eb9;
           .fill {
             height: 60%;
             width: 100%;
-            background-color: red;
+            background-color: $pink;
             border-radius: 10px;
             margin-bottom: -1px;
           }
@@ -50,7 +50,7 @@ $gray: #768eb9;
         align-items: center;
         justify-content: center;
         margin: 10px;
-        padding: 10px;
+        padding: 10px 20px;
         h4 {
           margin: 0;
           text-align: center;

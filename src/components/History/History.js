@@ -20,32 +20,27 @@ const History = () => {
     let day;
     day = 0;
     history.forEach((item) => {
-      let diff = new DateDiff(newDate, item.time);
+      let itemDate = new Date(item.time);
+      let diff = new DateDiff(newDate, itemDate);
       if (diff.days() < 1) {
         day++;
       } else {
         return day;
       }
     });
-    // history.foreach((item) => {
-    //   let diff = new DateDiff(newDate, item.time);
-    //   if (diff.days() < 1) {
-    //     day++;
-    //   } else {
-    //     return day;
-    //   }
-    // });
     return day;
   }
   let days = [0, 0, 0, 0, 0, 0, 0];
 
   function exercisesEachDay() {
-    let day = newDate.getDay();
+    let day = new Date().getDay();
     history.map((item) => {
-      let diff = new DateDiff(newDate, item.time);
-
+      let itemDate = new Date(item.time);
+      let diff = new DateDiff(newDate, itemDate);
       if (diff.days() < day) {
-        switch (item.time.getDay() - 1) {
+        switch (
+          day - 1 //czy -1?
+        ) {
           case 0:
             days[0]++;
             break;
@@ -71,9 +66,11 @@ const History = () => {
             break;
         }
       }
-      return days;
+      console.log(days);
+      // return days;
     });
   }
+
   exercisesEachDay();
   function getMaxNumber(days) {
     let maxNumber = 0;
@@ -82,9 +79,17 @@ const History = () => {
         maxNumber = days[i];
       }
     }
+
     return maxNumber;
   }
-  getMaxNumber(days);
+  function getHeight(day) {
+    let result = (day / maxNumber) * 150;
+    if (isNaN(result)) {
+      result = 0;
+    }
+    return result;
+  }
+
   // let maxNumber = getMaxNumber(days);
   let maxNumber = getMaxNumber(days);
   return (
@@ -96,70 +101,70 @@ const History = () => {
           <div className="chart">
             <div className="column">
               <h4>{days[0]}</h4>
-              <div className="progress-bar">
+              <div className="progress-bar concave">
                 <div
                   className="fill"
-                  style={{ height: (days[0] / maxNumber) * 150 }}
+                  style={{ height: getHeight(days[0]) }}
                 ></div>
               </div>
               <h4>Mon</h4>
             </div>
             <div className="column">
               <h4>{days[1]}</h4>
-              <div className="progress-bar">
+              <div className="progress-bar concave">
                 <div
                   className="fill"
-                  style={{ height: (days[1] / maxNumber) * 150 }}
+                  style={{ height: getHeight(days[1]) }}
                 ></div>
               </div>
               <h4>Tur</h4>
             </div>
             <div className="column">
               <h4>{days[2]}</h4>
-              <div className="progress-bar">
+              <div className="progress-bar concave">
                 <div
                   className="fill"
-                  style={{ height: (days[2] / maxNumber) * 150 }}
+                  style={{ height: getHeight(days[2]) }}
                 ></div>
               </div>
               <h4>Wed</h4>
             </div>
             <div className="column">
               <h4>{days[3]}</h4>
-              <div className="progress-bar">
+              <div className="progress-bar concave">
                 <div
                   className="fill"
-                  style={{ height: (days[3] / maxNumber) * 150 }}
+                  style={{ height: getHeight(days[3]) }}
                 ></div>
               </div>
               <h4>Thu</h4>
             </div>
             <div className="column">
               <h4>{days[4]}</h4>
-              <div className="progress-bar">
+              <div className="progress-bar concave">
                 <div
                   className="fill"
-                  style={{ height: (days[4] / maxNumber) * 150 }}
+                  style={{ height: getHeight(days[4]) }}
                 ></div>
               </div>
               <h4>Fri</h4>
             </div>
             <div className="column">
               <h4>{days[5]}</h4>
-              <div className="progress-bar">
+              <div className="progress-bar concave">
                 <div
                   className="fill"
-                  style={{ height: (days[5] / maxNumber) * 150 }}
+                  style={{ height: getHeight(days[5]) }}
                 ></div>
               </div>
               <h4>Sat</h4>
             </div>
             <div className="column">
               <h4>{days[6]}</h4>
-              <div className="progress-bar">
+              <div className="progress-bar concave">
                 <div
                   className="fill"
-                  style={{ height: (days[6] / maxNumber) * 150 }}
+                  style={{ height: getHeight(days[6]) }}
                 ></div>
               </div>
               <h4>Sun</h4>
@@ -171,7 +176,7 @@ const History = () => {
               <h4 className="finished-tasks">{checkTodayFinished()}</h4>
             </div>
             <div className="convex">
-              <h4>W tym tygodniu</h4>
+              <h4>Tydzień</h4>
               <h4 className="finished-tasks">{history.length}</h4>
             </div>
             <div className="convex">
@@ -180,16 +185,22 @@ const History = () => {
             </div>
           </div>
         </div>
+
         <div className="convex history-container">
-          {history.map((item, id) => {
-            let formattedDate = moment(item.time).format("DD-MM-YYYY");
-            return (
-              <div className="row" key={id}>
-                <h4 className="gray">{item.name}</h4>
-                <h4>{formattedDate}</h4>
-              </div>
-            );
-          })}
+          <h3>Wykonane zadania:</h3>
+          {history.length === 0 ? (
+            <p>Brak</p>
+          ) : (
+            history.map((item, id) => {
+              let formattedDate = moment(item.time).format("DD-MM-YYYY");
+              return (
+                <div className="row" key={id}>
+                  <h4 className="gray">{item.name}</h4>
+                  <h4>{formattedDate}</h4>
+                </div>
+              );
+            })
+          )}
         </div>
       </div>
     </>
