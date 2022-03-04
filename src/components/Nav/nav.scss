@@ -1,18 +1,38 @@
 $pink: #866dfa;
 $gray: #768eb9;
+$white: #ffffff;
+$green: #05de8b;
 
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   padding: 10px;
   position: fixed;
-  top: 0px;
+  top: -1px;
   width: calc(100vw - 20px);
   background: #e4ebf5;
   // position: sticky;
   // top: 0;
 }
-nav h2 {
+.nav h2 {
   margin: auto;
   color: $gray;
+}
+
+//dark mode
+
+.nav-dark {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  top: -1px;
+  width: calc(100vw - 20px);
+  background: #181c1d;
+  // position: sticky;
+  // top: 0;
+}
+.nav-dark h2 {
+  margin: auto;
+  color: $green;
 }

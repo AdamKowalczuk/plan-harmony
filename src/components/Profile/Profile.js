@@ -1,6 +1,5 @@
 import React from "react";
 import "./profile.scss";
-import "../Convex/convex.scss";
 import Nav from "../Nav/Nav";
 const Profile = () => {
   return (

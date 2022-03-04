@@ -123,6 +123,13 @@ export const addToNumber = (number) => {
   };
 };
 
+export const deleteFromHistory = (id) => {
+  return {
+    type: "DELETE_FROM_HISTORY",
+    id: id,
+  };
+};
+
 //   export const editList = (selectedType) => {
 //     return {
 //       type: "CHANGE_FORM_TYPE",

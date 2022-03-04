@@ -1,28 +1,29 @@
 import React from "react";
 import "./nav.scss";
-import Home from "../../icons/Home";
-import Menu from "../../icons/AlignRight";
+import { AlignRight, Home } from "../../icons/All";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Nav = (props) => {
+  let darkMode = useSelector((state) => state.darkMode);
   return (
     <>
-      <nav>
+      <nav className={darkMode === false ? "nav" : "nav-dark"}>
         <Link to="/">
           <div
-            className="convex-icon"
+            className={darkMode === false ? "convex-icon" : "convex-icon-dark"}
             style={{ width: "50px", height: "50px" }}
           >
-            <Home />
+            <Home darkMode={darkMode} />
           </div>
         </Link>
 
         <h2>{props.text}</h2>
         <Link to="/menu">
           <div
-            className="convex-icon"
+            className={darkMode === false ? "convex-icon" : "convex-icon-dark"}
             style={{ width: "50px", height: "50px" }}
           >
-            <Menu />
+            <AlignRight darkMode={darkMode} />
           </div>
         </Link>
       </nav>

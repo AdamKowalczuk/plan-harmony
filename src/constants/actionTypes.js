@@ -16,3 +16,4 @@ export const EDIT_NOTE = "EDIT_NOTE";
 export const DELETE_EXERCISE = "DELETE_EXERCISE";
 export const ADD_TO_HISTORY = "ADD_TO_HISTORY";
 export const ADD_TO_NUMBER = "ADD_TO_NUMBER";
+export const DELETE_FROM_HISTORY = "DELETE_FROM_HISTORY";

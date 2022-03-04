@@ -1,18 +1,21 @@
-import "./App.css";
+import "./App.scss";
 import List from "./components/List/List.js";
 import Exercises from "./components/Exercises/Exercises.js";
 import Menu from "./components/Menu/Menu.js";
 import History from "./components/History/History.js";
 import Profile from "./components/Profile/Profile.js";
+import { useSelector } from "react-redux";
 
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import AddList from "./components/AddList/AddList";
 import EditList from "./components/AddList/EditList";
+
 function App() {
+  let darkMode = useSelector((state) => state.darkMode);
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className={darkMode === false ? "App" : "App-dark"}>
         <Switch>
           <Route path="/" exact>
             <List />

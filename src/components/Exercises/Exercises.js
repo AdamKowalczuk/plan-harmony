@@ -1,13 +1,11 @@
 import React from "react";
-import "../Convex/convex.scss";
-import "../Concave/concave.scss";
 import "./exercises.scss";
 import "./notes.scss";
 import { useSelector, useDispatch } from "react-redux";
-import ArrowSmallUp from "../../icons/ArrowSmallUp";
 import Nav2 from "../Nav/Nav2";
 import moment from "moment";
-import List from "../../icons/List2";
+
+import { List2, ArrowSmallUp } from "../../icons/All";
 
 import {
   changeNewExerciseName,
@@ -21,24 +19,35 @@ import {
 
 const SingleExercise = (props) => {
   let actualList = useSelector((state) => state.actualList);
+  let darkMode = useSelector((state) => state.darkMode);
   let finishedTask = useSelector((state) => state.finishedTask);
   let dateYear = moment().format("YYYY");
   let dateMonth = moment().format("MM");
   let dateDay = moment().format("DD");
-  let date = new Date(dateYear, dateMonth, dateDay);
+  let date = new Date(dateYear, dateMonth - 1, dateDay);
 
   const dispatch = useDispatch();
   return (
     <>
       <div
-        className="convex single-exercise"
+        className={
+          darkMode === false
+            ? "convex single-exercises"
+            : "convex-dark single-exercise-dark"
+        }
         onClick={() => {
           dispatch(deleteExercise(actualList, props.id));
           dispatch(addToHistory(props.exercise, date));
           dispatch(addToNumber(finishedTask));
         }}
       >
-        <div className="concave w40 animated-button">
+        <div
+          className={
+            darkMode === false
+              ? "concave w40 animated-button"
+              : "concave-dark w40 animated-button-dark"
+          }
+        >
           {/* <ArrowSmallUp /> */}
         </div>
         <h3>{props.exercise}</h3>
@@ -51,17 +60,28 @@ const Exercises = () => {
   let actualList = useSelector((state) => state.actualList);
   const dispatch = useDispatch();
   let lists = useSelector((state) => state.lists);
+  let darkMode = useSelector((state) => state.darkMode);
   let newExercise = useSelector((state) => state.newExercise);
 
   return (
     <>
       <Nav2 text={lists[actualList].name} />
       {lists[actualList].type === "list" ? (
-        <div className="exercises">
+        <div className={darkMode === false ? "exercises" : "exercises-dark"}>
           {lists[actualList].exercises.length === 0 ? (
-            <div className="no-exercises">
-              <div className="convex">
-                <List />
+            <div
+              className={
+                darkMode === false ? "no-exercises" : "no-exercises-dark"
+              }
+            >
+              <div
+                className={
+                  darkMode === false
+                    ? "exercise-add-container"
+                    : "exercise-add-container-dark"
+                }
+              >
+                <List2 />
               </div>
               <h3>Brak zadań</h3>
               <h4>Dodaj nowe zadanie!</h4>
@@ -72,11 +92,25 @@ const Exercises = () => {
             })
           )}
 
-          <div className="exercise-add-container">
-            <div className="concave add-exercise">
+          <div
+            className={
+              darkMode === false
+                ? "exercise-add-container"
+                : "exercise-add-container-dark"
+            }
+          >
+            <div
+              className={
+                darkMode === false
+                  ? "concave add-exercise"
+                  : "concave-dark add-exercise-dark"
+              }
+            >
               <input
                 type="text"
-                className="input-text"
+                className={
+                  darkMode === false ? "input-text" : "input-text-dark"
+                }
                 placeholder="Dodaj zadanie..."
                 value={newExercise}
                 onChange={(e) => {
@@ -86,7 +120,9 @@ const Exercises = () => {
             </div>
 
             <div
-              className="convex-icon w50"
+              className={
+                darkMode === false ? "convex-icon w50" : "convex-icon-dark w50"
+              }
               onClick={(e) => {
                 dispatch(addNewExercise(newExercise, actualList));
                 dispatch(resetNewExerciseInput());
@@ -97,9 +133,9 @@ const Exercises = () => {
           </div>
         </div>
       ) : (
-        <div className="notes">
+        <div className={darkMode === false ? "notes" : "notes-dark"}>
           <textarea
-            className="concave"
+            className={darkMode === false ? "concave" : "concave-dark"}
             cols="30"
             rows="20"
             placeholder="Wpisz swoje notatki..."
@@ -109,15 +145,6 @@ const Exercises = () => {
           >
             {lists[actualList].note}
           </textarea>
-          {/* <div className="convex edit-button">
-            <h3
-              onClick={() => {
-                dispatch(editNote(lists[actualList].note, actualList));
-              }}
-            >
-              Edytuj
-            </h3>
-          </div> */}
         </div>
       )}
     </>

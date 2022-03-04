@@ -1,11 +1,10 @@
 import React from "react";
-import "../Convex/convex.scss";
 import "./list.scss";
 import Nav from "../Nav/Nav";
 import { useSelector, useDispatch } from "react-redux";
 import { changeActualList } from "../../actions/actions";
-import Plus from "../../icons/Plus";
 import { Link } from "react-router-dom";
+import { Plus } from "../../icons/All";
 import {
   ListCheck,
   ShoppingBag,
@@ -31,70 +30,85 @@ import {
   VideoCamera,
 } from "../../list-icons/All";
 
-function returnIcon(icon) {
+function returnIcon(icon, darkMode) {
   switch (icon) {
     case "ListCheck":
-      return <ListCheck />;
+      return <ListCheck darkMode={darkMode} />;
     case "ShoppingBag":
-      return <ShoppingBag />;
+      return <ShoppingBag darkMode={darkMode} />;
     case "Plane":
-      return <Plane />;
+      return <Plane darkMode={darkMode} />;
     case "Book":
-      return <Book />;
+      return <Book darkMode={darkMode} />;
     case "Dollar":
-      return <Dollar />;
+      return <Dollar darkMode={darkMode} />;
     case "Edit":
-      return <Edit />;
+      return <Edit darkMode={darkMode} />;
     case "Backpack":
-      return <Backpack />;
+      return <Backpack darkMode={darkMode} />;
     case "Beer":
-      return <Beer />;
+      return <Beer darkMode={darkMode} />;
     case "CakeBirthday":
-      return <CakeBirthday />;
+      return <CakeBirthday darkMode={darkMode} />;
     case "Flag":
-      return <Flag />;
+      return <Flag darkMode={darkMode} />;
     case "Gamepad":
-      return <Gamepad />;
+      return <Gamepad darkMode={darkMode} />;
     case "Gift":
-      return <Gift />;
+      return <Gift darkMode={darkMode} />;
     case "Gym":
-      return <Gym />;
+      return <Gym darkMode={darkMode} />;
     case "Hamburger":
-      return <Hamburger />;
+      return <Hamburger darkMode={darkMode} />;
     case "HearthArrow":
-      return <HearthArrow />;
+      return <HearthArrow darkMode={darkMode} />;
     case "Medicine":
-      return <Medicine />;
+      return <Medicine darkMode={darkMode} />;
     case "MusicAlt":
-      return <MusicAlt />;
+      return <MusicAlt darkMode={darkMode} />;
     case "Paw":
-      return <Paw />;
+      return <Paw darkMode={darkMode} />;
     case "Snowboarding":
-      return <Snowboarding />;
+      return <Snowboarding darkMode={darkMode} />;
     case "Thumbtack":
-      return <Thumbtack />;
+      return <Thumbtack darkMode={darkMode} />;
     case "Trophy":
-      return <Trophy />;
+      return <Trophy darkMode={darkMode} />;
     case "VideoCamera":
-      return <VideoCamera />;
+      return <VideoCamera darkMode={darkMode} />;
     default:
       return null;
   }
 }
-
+// function darkMode() {
+//   let convex = document.getElementsByClassName("convex");
+//   // console.log(convex);
+//   console.log(convex.length);
+//   for (let i = 0; i < convex.length; i++) {
+//     convex[i].className = "convex-dark";
+//     console.log(convex[i].className);
+//   }
+// }
+// darkMode();
 const SingleList = (props) => {
   const dispatch = useDispatch();
+  let darkMode = useSelector((state) => state.darkMode);
   return (
     <div
-      className="convex list-topic"
+      className={
+        darkMode === false ? "convex list-topic" : "convex-dark list-topic-dark"
+      }
       onClick={() => {
         dispatch(changeActualList(props.id));
       }}
     >
       <h3>{props.name}</h3>
       <Link to="/exercises" className="link">
-        <div className="convex-icon" style={{ width: "80px", height: "80px" }}>
-          {returnIcon(props.icon)}
+        <div
+          className={darkMode === false ? "convex-icon" : "convex-icon-dark"}
+          style={{ width: "80px", height: "80px" }}
+        >
+          {returnIcon(props.icon, darkMode)}
         </div>
       </Link>
     </div>
@@ -102,19 +116,31 @@ const SingleList = (props) => {
 };
 const List = () => {
   let lists = useSelector((state) => state.lists);
-
+  let darkMode = useSelector((state) => state.darkMode);
   return (
     <>
       <Nav text="Lista zadań" />
-      <div className="list">
+
+      <div className={darkMode === false ? "list" : "list-dark"}>
         {lists.map((list, id) => {
           return (
             <SingleList name={list.name} key={id} id={id} icon={list.icon} />
           );
         })}
-        <div className="convex list-topic">
+
+        <div
+          className={
+            darkMode === false
+              ? "convex list-topic"
+              : "convex-dark list-topic-dark"
+          }
+        >
           <Link to="/add-list" className="link">
-            <div className="convex-icon w80">
+            <div
+              className={
+                darkMode === false ? "convex-icon w80" : "convex-icon-dark w80"
+              }
+            >
               <Plus />
             </div>
           </Link>

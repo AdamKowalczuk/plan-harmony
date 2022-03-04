@@ -1,5 +1,7 @@
 $pink: #866dfa;
 $gray: #768eb9;
+$white: #ffffff;
+$green: #05de8b;
 
 .cross-container {
   display: flex;
@@ -86,6 +88,7 @@ $gray: #768eb9;
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 20px;
     width: calc(86% - 40px);
     padding: 15px 20px;
     h3 {
@@ -105,6 +108,111 @@ $gray: #768eb9;
   display: flex;
   justify-content: space-between;
   .delete-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+}
+
+//dark mode
+.cross-container-dark {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.form-container-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    color: $green;
+  }
+  .add-list-name-dark {
+    width: calc(86% - 40px);
+    padding: 15px 20px;
+    margin-top: 30px;
+    h3 {
+      margin: 0;
+    }
+    input {
+      color: $green;
+    }
+  }
+  .add-list-type-dark {
+    display: flex;
+    flex-direction: column;
+    width: calc(86% - 40px);
+    padding: 0px 20px 15px 20px;
+    margin-top: 30px;
+    .type-container-dark {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 30px;
+      }
+      h3 {
+        margin-left: 10px;
+      }
+    }
+    .add-list-button-container-dark {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .button-concave-dark {
+        display: flex;
+        justify-content: center;
+        width: 45%;
+      }
+    }
+  }
+
+  .add-list-icons-dark {
+    display: flex;
+    flex-direction: column;
+    width: calc(86% - 40px);
+    padding: 0px 20px 15px 20px;
+    margin-top: 30px;
+    .icon-container-dark {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 30px;
+      }
+      h3 {
+        margin-left: 10px;
+      }
+    }
+    .icons-dark {
+      div {
+        display: inline-block;
+        padding: 10px;
+      }
+      img {
+        width: 20px;
+        padding: 10px 10px 0 10px;
+        opacity: 0.5;
+      }
+    }
+  }
+  .add-list-button-dark {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: calc(86% - 40px);
+    padding: 15px 20px;
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.top-icons-dark {
+  display: flex;
+  justify-content: space-between;
+  .delete-container-dark {
     display: flex;
     justify-content: flex-end;
     padding: 10px;

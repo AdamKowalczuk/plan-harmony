@@ -1,28 +1,29 @@
 import React from "react";
 import "./nav.scss";
-import Home from "../../icons/Home";
-import Settings from "../../icons/Settings";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Home, Settings } from "../../icons/All";
 const Nav2 = (props) => {
+  let darkMode = useSelector((state) => state.darkMode);
   return (
     <>
-      <nav>
+      <nav className={darkMode === false ? "nav" : "nav-dark"}>
         <Link to="/">
           <div
-            className="convex-icon"
+            className={darkMode === false ? "convex-icon" : "convex-icon-dark"}
             style={{ width: "50px", height: "50px" }}
           >
-            <Home />
+            <Home darkMode={darkMode} />
           </div>
         </Link>
 
         <h2>{props.text}</h2>
         <Link to="/edit-list">
           <div
-            className="convex-icon"
+            className={darkMode === false ? "convex-icon" : "convex-icon-dark"}
             style={{ width: "50px", height: "50px" }}
           >
-            <Settings />
+            <Settings darkMode={darkMode} />
           </div>
         </Link>
       </nav>
