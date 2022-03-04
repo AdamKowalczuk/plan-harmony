@@ -105,16 +105,26 @@ const AddList = () => {
             className={
               darkMode === false
                 ? "convex add-list-type"
-                : "convex-dark add-list-type"
+                : "convex-dark add-list-type-dark"
             }
           >
-            <div className="type-container">
+            <div
+              className={
+                darkMode === false ? "type-container" : "type-container-dark"
+              }
+            >
               <div className="center w50">
                 <Layers />
               </div>
               <h3>Typ</h3>
             </div>
-            <div className="add-list-button-container">
+            <div
+              className={
+                darkMode === false
+                  ? "add-list-button-container"
+                  : "add-list-button-container-dark"
+              }
+            >
               {darkMode === false ? (
                 <div
                   className={
