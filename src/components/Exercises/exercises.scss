@@ -5,7 +5,7 @@ $green: #05de8b;
 
 .exercises {
   margin-top: 70px;
-  margin-bottom: 84px;
+  margin-bottom: 83px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,6 +35,8 @@ $green: #05de8b;
     position: fixed;
     bottom: 0;
     background-color: #e4ebf5;
+    box-sizing: border-box;
+    width: 100vw;
     .add-exercise {
       padding: 15px 20px;
       width: 100%;
@@ -42,6 +44,7 @@ $green: #05de8b;
       color: $gray;
       input {
         color: $gray;
+        outline: none;
       }
     }
   }
@@ -73,7 +76,7 @@ $green: #05de8b;
 // dark mode
 .exercises-dark {
   margin-top: 70px;
-  margin-bottom: 84px;
+  margin-bottom: 83px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,7 +105,9 @@ $green: #05de8b;
     padding: 15px 20px;
     position: fixed;
     bottom: 0;
-    // background-color: #262c2c;
+    box-sizing: border-box;
+    width: 100vw;
+    background-color: #181c1d;
     .add-exercise-dark {
       padding: 15px 20px;
       width: 100%;
@@ -110,6 +115,7 @@ $green: #05de8b;
       color: $green;
       input {
         color: $green;
+        outline: none;
       }
     }
   }

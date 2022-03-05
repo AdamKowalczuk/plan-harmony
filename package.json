@@ -60,6 +60,7 @@
     ]
   },
   "devDependencies": {
-    "sw-precache-webpack-plugin": "^1.0.0"
+    "sw-precache-webpack-plugin": "^1.0.0",
+    "workbox-build": "^6.5.1"
   }
 }

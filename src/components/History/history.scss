@@ -212,7 +212,8 @@ $green: #05de8b;
         background-color: #262c2c;
       }
       tr {
-        border-bottom: 1px solid $white;
+        border-bottom: 1px solid rgb(255, 255, 255, 30%);
+
         // background-color: red;
         th {
           padding: 10px 20px;

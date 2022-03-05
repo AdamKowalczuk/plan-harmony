@@ -8,11 +8,12 @@ $green: #05de8b;
   justify-content: flex-end;
   padding: 10px;
 }
-
+//596,31
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: calc(100vh - 68px);
   h3 {
     color: $gray;
   }
@@ -65,6 +66,7 @@ $green: #05de8b;
     .icon-container {
       display: flex;
       justify-content: center;
+      align-items: center;
       img {
         width: 30px;
       }
@@ -73,6 +75,9 @@ $green: #05de8b;
       }
     }
     .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       div {
         display: inline-block;
         padding: 10px;
@@ -169,6 +174,7 @@ $green: #05de8b;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: calc(100vh - 68px);
   h3 {
     color: $green;
   }
@@ -221,6 +227,7 @@ $green: #05de8b;
     .icon-container-dark {
       display: flex;
       justify-content: center;
+      align-items: center;
       img {
         width: 30px;
       }
@@ -229,6 +236,9 @@ $green: #05de8b;
       }
     }
     .icons-dark {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       div {
         display: inline-block;
         padding: 10px;
