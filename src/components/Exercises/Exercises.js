@@ -32,7 +32,7 @@ const SingleExercise = (props) => {
       <div
         className={
           darkMode === false
-            ? "convex single-exercises"
+            ? "convex single-exercise"
             : "convex-dark single-exercise-dark"
         }
         onClick={() => {
@@ -77,11 +77,11 @@ const Exercises = () => {
               <div
                 className={
                   darkMode === false
-                    ? "exercise-add-container"
-                    : "exercise-add-container-dark"
+                    ? "exercise-container convex"
+                    : "exercise-container-dark convex-dark"
                 }
               >
-                <List2 />
+                <List2 darkMode={darkMode} />
               </div>
               <h3>Brak zadań</h3>
               <h4>Dodaj nowe zadanie!</h4>
@@ -128,7 +128,7 @@ const Exercises = () => {
                 dispatch(resetNewExerciseInput());
               }}
             >
-              <ArrowSmallUp />
+              <ArrowSmallUp darkMode={darkMode} />
             </div>
           </div>
         </div>

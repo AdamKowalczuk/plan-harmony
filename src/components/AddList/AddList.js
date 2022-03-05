@@ -23,10 +23,14 @@ import {
   MusicAlt,
   Paw,
   Plane,
-  Snowboarding,
   Thumbtack,
   Trophy,
   VideoCamera,
+  ListCheck,
+  ShoppingBag,
+  Book,
+  Dollar,
+  Edit,
 } from "../../list-icons/All";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -38,23 +42,27 @@ const AddList = () => {
   let form = useSelector((state) => state.form);
   const [color, setColor] = useState(0);
   let components = [
-    <Backpack icon="Backpack" />,
-    <Beer icon="Beer" />,
-    <CakeBirthday icon="CakeBirthday" />,
-    <Flag icon="Flag" />,
-    <Gamepad icon="Gamepad" />,
-    <Gift icon="Gift" />,
-    <Gym icon="Gym" />,
-    <Hamburger icon="Hamburger" />,
-    <HearthArrow icon="HearthArrow" />,
-    <Medicine icon="Medicine" />,
-    <MusicAlt icon="MusicAlt" />,
-    <Paw icon="Paw" />,
-    <Plane icon="Plane" />,
-    <Snowboarding icon="Snowboarding" />,
-    <Thumbtack icon="Thumbtack" />,
-    <Trophy icon="Trophy" />,
-    <VideoCamera icon="VideoCamera" />,
+    <ListCheck icon="ListCheck" darkMode={darkMode} />,
+    <ShoppingBag icon="ShoppingBag" darkMode={darkMode} />,
+    <Book icon="Book" darkMode={darkMode} />,
+    <Dollar icon="Dollar" darkMode={darkMode} />,
+    <Edit icon="Edit" darkMode={darkMode} />,
+    <Backpack icon="Backpack" darkMode={darkMode} />,
+    <Beer icon="Beer" darkMode={darkMode} />,
+    <CakeBirthday icon="CakeBirthday" darkMode={darkMode} />,
+    <Flag icon="Flag" darkMode={darkMode} />,
+    <Gamepad icon="Gamepad" darkMode={darkMode} />,
+    <Gift icon="Gift" darkMode={darkMode} />,
+    <Gym icon="Gym" darkMode={darkMode} />,
+    <Hamburger icon="Hamburger" darkMode={darkMode} />,
+    <HearthArrow icon="HearthArrow" darkMode={darkMode} />,
+    <Medicine icon="Medicine" darkMode={darkMode} />,
+    <MusicAlt icon="MusicAlt" darkMode={darkMode} />,
+    <Paw icon="Paw" darkMode={darkMode} />,
+    <Plane icon="Plane" darkMode={darkMode} />,
+    <Thumbtack icon="Thumbtack" darkMode={darkMode} />,
+    <Trophy icon="Trophy" darkMode={darkMode} />,
+    <VideoCamera icon="VideoCamera" darkMode={darkMode} />,
   ];
 
   const changeColor = (id) => {
@@ -75,7 +83,7 @@ const AddList = () => {
               }
               style={{ width: "50px", height: "50px" }}
             >
-              <CrossSmall />
+              <CrossSmall darkMode={darkMode} />
             </div>
           </div>
         </Link>
@@ -114,7 +122,7 @@ const AddList = () => {
               }
             >
               <div className="center w50">
-                <Layers />
+                <Layers darkMode={darkMode} />
               </div>
               <h3>Typ</h3>
             </div>
@@ -152,19 +160,6 @@ const AddList = () => {
                   <h3>Lista</h3>
                 </div>
               )}
-              {/* <div
-                className={
-                  form.type === "list"
-                    ? "button-concave concave"
-                    : "button-concave "
-                }
-                onClick={() => {
-                  dispatch(changeFormType("list"));
-                }}
-              >
-                <h3>Lista</h3>
-              </div> */}
-
               {darkMode === false ? (
                 <div
                   className={
@@ -207,7 +202,7 @@ const AddList = () => {
               }
             >
               <div className="center w50">
-                <Balloons />
+                <Balloons darkMode={darkMode} />
               </div>
               <h3>Ikona</h3>
             </div>

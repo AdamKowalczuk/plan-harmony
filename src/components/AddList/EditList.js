@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./addList.scss";
 import "../Menu/menu.scss";
+import Modal from "react-modal";
 import { Balloons, CrossSmall, Layers, Trash } from "../../icons/All";
 import {
   Backpack,
@@ -16,7 +17,6 @@ import {
   MusicAlt,
   Paw,
   Plane,
-  Snowboarding,
   Thumbtack,
   Trophy,
   VideoCamera,
@@ -29,36 +29,36 @@ import {
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { editList, deleteList } from "../../actions/actions";
-let components = [
-  <ListCheck icon="ListCheck" />,
-  <ShoppingBag icon="ShoppingBag" />,
-  <Book icon="Book" />,
-  <Dollar icon="Dollar" />,
-  <Edit icon="Edit" />,
 
-  <Backpack icon="Backpack" />,
-  <Beer icon="Beer" />,
-  <CakeBirthday icon="CakeBirthday" />,
-  <Flag icon="Flag" />,
-  <Gamepad icon="Gamepad" />,
-  <Gift icon="Gift" />,
-  <Gym icon="Gym" />,
-  <Hamburger icon="Hamburger" />,
-  <HearthArrow icon="HearthArrow" />,
-  <Medicine icon="Medicine" />,
-  <MusicAlt icon="MusicAlt" />,
-  <Paw icon="Paw" />,
-  <Plane icon="Plane" />,
-  <Snowboarding icon="Snowboarding" />,
-  <Thumbtack icon="Thumbtack" />,
-  <Trophy icon="Trophy" />,
-  <VideoCamera icon="VideoCamera" />,
-];
+Modal.setAppElement("#root");
 const EditList = () => {
   const dispatch = useDispatch();
   let actualList = useSelector((state) => state.actualList);
   let lists = useSelector((state) => state.lists);
   let darkMode = useSelector((state) => state.darkMode);
+  let components = [
+    <ListCheck icon="ListCheck" darkMode={darkMode} />,
+    <ShoppingBag icon="ShoppingBag" darkMode={darkMode} />,
+    <Book icon="Book" darkMode={darkMode} />,
+    <Dollar icon="Dollar" darkMode={darkMode} />,
+    <Edit icon="Edit" darkMode={darkMode} />,
+    <Backpack icon="Backpack" darkMode={darkMode} />,
+    <Beer icon="Beer" darkMode={darkMode} />,
+    <CakeBirthday icon="CakeBirthday" darkMode={darkMode} />,
+    <Flag icon="Flag" darkMode={darkMode} />,
+    <Gamepad icon="Gamepad" darkMode={darkMode} />,
+    <Gift icon="Gift" darkMode={darkMode} />,
+    <Gym icon="Gym" darkMode={darkMode} />,
+    <Hamburger icon="Hamburger" darkMode={darkMode} />,
+    <HearthArrow icon="HearthArrow" darkMode={darkMode} />,
+    <Medicine icon="Medicine" darkMode={darkMode} />,
+    <MusicAlt icon="MusicAlt" darkMode={darkMode} />,
+    <Paw icon="Paw" darkMode={darkMode} />,
+    <Plane icon="Plane" darkMode={darkMode} />,
+    <Thumbtack icon="Thumbtack" darkMode={darkMode} />,
+    <Trophy icon="Trophy" darkMode={darkMode} />,
+    <VideoCamera icon="VideoCamera" darkMode={darkMode} />,
+  ];
   const initialState = {
     name: lists[actualList].name,
     type: lists[actualList].type,
@@ -88,31 +88,114 @@ const EditList = () => {
   const changeColor = (id) => {
     setColor(id);
   };
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
   return (
     <>
       <div className={darkMode === false ? "add-list" : "add-list-dark"}>
-        <div className={darkMode === false ? "top-icons" : "top-icons-dark"}>
-          <Link to="/">
-            <div
-              className={
-                darkMode === false
-                  ? "delete-container"
-                  : "delete-container-dark"
-              }
-              onClick={() => {
-                dispatch(deleteList(actualList));
-              }}
-            >
-              <div
-                className={
-                  darkMode === false ? "convex-icon" : "convex-icon-dark"
-                }
-                style={{ width: "50px", height: "50px" }}
-              >
-                <Trash darkMode={darkMode} />
+        {darkMode === false ? (
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            className="Modal"
+          >
+            <Link to="/edit-list">
+              <div className="cross-container" onClick={closeModal}>
+                <div
+                  className="convex-icon"
+                  style={{ width: "50px", height: "50px" }}
+                >
+                  <CrossSmall darkMode={darkMode} />
+                </div>
+              </div>
+            </Link>
+            <div className="modal-container">
+              <div className="convex">
+                <h2>Czy na pewno chcesz usunąć tą listę?</h2>
+                <div className="modal-button-container">
+                  <Link to="/">
+                    <div
+                      className="convex add-list-button"
+                      onClick={() => {
+                        dispatch(deleteList(actualList));
+                      }}
+                    >
+                      <h3>Tak</h3>
+                    </div>
+                  </Link>
+                  <Link to="/edit-list" onClick={closeModal}>
+                    <div className="convex add-list-button">
+                      <h3>Nie</h3>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
-          </Link>
+          </Modal>
+        ) : (
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            className="Modal-dark"
+          >
+            <Link to="/edit-list">
+              <div className="cross-container-dark" onClick={closeModal}>
+                <div
+                  className="convex-icon-dark"
+                  style={{ width: "50px", height: "50px" }}
+                >
+                  <CrossSmall darkMode={darkMode} />
+                </div>
+              </div>
+            </Link>
+            <div className="modal-container-dark">
+              <div className="convex-dark">
+                <h2>Czy na pewno chcesz usunąć tą listę?</h2>
+                <div className="modal-button-container-dark">
+                  <Link to="/">
+                    <div
+                      className="convex-dark add-list-button-dark"
+                      onClick={() => {
+                        dispatch(deleteList(actualList));
+                      }}
+                    >
+                      <h3>Tak</h3>
+                    </div>
+                  </Link>
+                  <Link to="/edit-list" onClick={closeModal}>
+                    <div className="convex-dark add-list-button-dark">
+                      <h3>Nie</h3>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Modal>
+        )}
+
+        <div className={darkMode === false ? "top-icons" : "top-icons-dark"}>
+          <div
+            className={
+              darkMode === false ? "delete-container" : "delete-container-dark"
+            }
+            onClick={openModal}
+          >
+            <div
+              className={
+                darkMode === false ? "convex-icon" : "convex-icon-dark"
+              }
+              style={{ width: "50px", height: "50px" }}
+            >
+              <Trash darkMode={darkMode} />
+            </div>
+          </div>
           <Link to="/exercises">
             <div
               className={

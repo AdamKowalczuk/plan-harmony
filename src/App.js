@@ -3,7 +3,6 @@ import List from "./components/List/List.js";
 import Exercises from "./components/Exercises/Exercises.js";
 import Menu from "./components/Menu/Menu.js";
 import History from "./components/History/History.js";
-import Profile from "./components/Profile/Profile.js";
 import { useSelector } from "react-redux";
 
 import React from "react";
@@ -31,9 +30,6 @@ function App() {
           </Route>
           <Route path="/menu">
             <Menu />
-          </Route>
-          <Route path="/profile">
-            <Profile />
           </Route>
           <Route path="/history">
             <History />

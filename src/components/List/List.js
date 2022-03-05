@@ -24,7 +24,6 @@ import {
   Medicine,
   MusicAlt,
   Paw,
-  Snowboarding,
   Thumbtack,
   Trophy,
   VideoCamera,
@@ -68,8 +67,6 @@ function returnIcon(icon, darkMode) {
       return <MusicAlt darkMode={darkMode} />;
     case "Paw":
       return <Paw darkMode={darkMode} />;
-    case "Snowboarding":
-      return <Snowboarding darkMode={darkMode} />;
     case "Thumbtack":
       return <Thumbtack darkMode={darkMode} />;
     case "Trophy":
@@ -141,7 +138,7 @@ const List = () => {
                 darkMode === false ? "convex-icon w80" : "convex-icon-dark w80"
               }
             >
-              <Plus />
+              <Plus darkMode={darkMode} />
             </div>
           </Link>
         </div>
