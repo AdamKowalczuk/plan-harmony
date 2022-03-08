@@ -31,6 +31,7 @@ const Notification = () => {
   });
   const notify = () => toast(<ToastDisplay />);
   function ToastDisplay() {
+    alert("TOAST");
     return (
       <div className="notification">
         <p>
