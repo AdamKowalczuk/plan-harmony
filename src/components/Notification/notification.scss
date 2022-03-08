@@ -1,0 +1,28 @@
+$pink: #866dfa;
+$gray: #768eb9;
+$white: #ffffff;
+$green: #05de8b;
+
+.notification {
+  background-color: E4EBF5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   justify-content: center;
+  height: auto;
+  b {
+    color: $gray;
+    margin: 0;
+    padding: 5px;
+  }
+  p {
+    margin: 2px;
+    color: $gray;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    fill: $gray;
+  }
+}

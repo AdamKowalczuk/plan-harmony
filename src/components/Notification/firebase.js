@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { log } from "react-modal/lib/helpers/ariaAppHider";
 const firebaseConfig = {
   apiKey: "AIzaSyBkZ4eBN2BsbHwfLRd5SSGVW446hTFvqWM",
   authDomain: "aplikacja-do-planowania.firebaseapp.com",
