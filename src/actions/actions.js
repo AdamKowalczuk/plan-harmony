@@ -59,6 +59,20 @@ export const deleteExercise = (actualList, id) => {
     id: id,
   };
 };
+export const deleteCompletedExercises = (actualList) => {
+  return {
+    type: "DELETE_COMPLETED_EXERCISES",
+    actualList: actualList,
+  };
+};
+
+export const changeExerciseToComplete = (actualList, id) => {
+  return {
+    type: "CHANGE_EXERCISE_TO_COMPLETE",
+    actualList: actualList,
+    id: id,
+  };
+};
 
 export const setActualList = (actualList) => {
   return {
@@ -108,11 +122,12 @@ export const resetForm = () => {
   };
 };
 
-export const addToHistory = (name, time) => {
+export const addToHistory = (name, time, listName) => {
   return {
     type: "ADD_TO_HISTORY",
     name: name,
     time: time,
+    listName: listName,
   };
 };
 

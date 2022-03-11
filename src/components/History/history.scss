@@ -4,12 +4,10 @@ $white: #ffffff;
 $green: #05de8b;
 .history {
   display: flex;
-  //   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   margin-top: 70px;
-
   .history-convex {
     display: flex;
     flex-direction: column;
@@ -29,7 +27,6 @@ $green: #05de8b;
           margin: 10px 0;
         }
         .progress-bar {
-          // border: 2px solid black;
           width: 60%;
           height: 150px;
           display: flex;
@@ -47,9 +44,7 @@ $green: #05de8b;
     }
     .history-sum {
       display: flex;
-
       padding: 10px;
-
       .convex {
         display: flex;
         flex-direction: column;
@@ -86,7 +81,6 @@ $green: #05de8b;
     h3 {
       text-align: center;
     }
-
     table {
       text-align: left;
       border-collapse: collapse;
@@ -99,10 +93,8 @@ $green: #05de8b;
       }
       tr {
         border-bottom: 1px solid $gray;
-        // background-color: red;
         th {
           padding: 10px 20px;
-          // border-bottom: 1px solid red;
         }
       }
       tr:hover {
@@ -114,15 +106,12 @@ $green: #05de8b;
 }
 
 //dark mode
-
 .history-dark {
   display: flex;
-  //   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   margin-top: 70px;
-
   .history-convex-dark {
     display: flex;
     flex-direction: column;
@@ -142,7 +131,6 @@ $green: #05de8b;
           margin: 10px 0;
         }
         .progress-bar-dark {
-          // border: 2px solid black;
           width: 60%;
           height: 150px;
           display: flex;
@@ -160,9 +148,7 @@ $green: #05de8b;
     }
     .history-sum-dark {
       display: flex;
-
       padding: 10px;
-
       .convex-dark {
         display: flex;
         flex-direction: column;
@@ -197,10 +183,8 @@ $green: #05de8b;
       color: $green;
     }
     h3 {
-      // color: $pink;
       text-align: center;
     }
-
     .table-dark {
       text-align: left;
       border-collapse: collapse;
@@ -213,11 +197,8 @@ $green: #05de8b;
       }
       tr {
         border-bottom: 1px solid rgb(255, 255, 255, 30%);
-
-        // background-color: red;
         th {
           padding: 10px 20px;
-          // border-bottom: 1px solid red;
         }
       }
       tr:hover {

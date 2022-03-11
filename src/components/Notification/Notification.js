@@ -5,9 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Trophy } from "../../icons/All";
 import "./notification.scss";
 import moment from "moment";
-import DateDiff from "date-diff";
 const Notification = () => {
-  const dispatch = useDispatch();
   let history = useSelector((state) => state.history);
   let newDateYear = moment().format("YYYY");
   let newDateMonth = moment().format("MM");

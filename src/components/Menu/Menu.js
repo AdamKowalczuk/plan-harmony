@@ -13,31 +13,15 @@ const Menu = () => {
   return (
     <>
       <Nav text="Menu" />
-      <div className={darkMode === false ? "menu" : "menu-dark"}>
-        <div
-          className={
-            darkMode === false
-              ? "convex menu-option2"
-              : "convex-dark menu-option2-dark"
-          }
-        >
-          <div className={darkMode === false ? "menu-name" : "menu-name-dark"}>
+      <div className={darkMode === false ? "menu" : "menu menu-dark"}>
+        <div className={darkMode === false ? "convex menu-option2" : "convex-dark menu-option2"}>
+          <div className={darkMode === false ? "menu-name" : "menu-name menu-name-dark"}>
             <Fill darkMode={darkMode} />
             <h3>Motyw</h3>
           </div>
-          <div
-            className={
-              darkMode === false
-                ? "menu-button-container"
-                : "menu-button-container-dark"
-            }
-          >
+          <div className={darkMode === false ? "menu-button-container" : "menu-button-container menu-button-container-dark"}>
             <div
-              className={
-                darkMode === false
-                  ? "button-concave concave"
-                  : "button-concave-dark"
-              }
+              className={darkMode === false ? "button-concave concave" : "button-concave-dark"}
               onClick={() => {
                 dispatch(changeMode(false));
               }}
@@ -45,11 +29,7 @@ const Menu = () => {
               <h3>Jasny</h3>
             </div>
             <div
-              className={
-                darkMode === false
-                  ? "button-concave"
-                  : "button-concave-dark concave-dark"
-              }
+              className={darkMode === false ? "button-concave" : "button-concave-dark concave-dark"}
               onClick={() => {
                 dispatch(changeMode(true));
               }}
@@ -58,31 +38,15 @@ const Menu = () => {
             </div>
           </div>
         </div>
-        <div
-          className={
-            darkMode === false
-              ? "convex menu-option2"
-              : "convex-dark menu-option2-dark"
-          }
-        >
-          <div className={darkMode === false ? "menu-name" : "menu-name-dark"}>
+        <div className={darkMode === false ? "convex menu-option2" : "convex-dark menu-option2"}>
+          <div className={darkMode === false ? "menu-name" : "menu-name menu-name-dark"}>
             <BellRing darkMode={darkMode} />
             <h3>Powiadomienia</h3>
           </div>
-          <div
-            className={
-              darkMode === false
-                ? "menu-button-container"
-                : "menu-button-container-dark"
-            }
-          >
+          <div className={darkMode === false ? "menu-button-container" : "menu-button-container menu-button-container-dark"}>
             {darkMode === false ? (
               <div
-                className={
-                  notifications === true
-                    ? "button-concave concave"
-                    : "button-concave"
-                }
+                className={notifications === true ? "button-concave concave" : "button-concave"}
                 onClick={() => {
                   dispatch(changeNotifications(true));
                 }}
@@ -91,11 +55,7 @@ const Menu = () => {
               </div>
             ) : (
               <div
-                className={
-                  notifications === true
-                    ? "button-concave-dark concave-dark"
-                    : "button-concave-dark"
-                }
+                className={notifications === true ? "button-concave-dark concave-dark" : "button-concave-dark"}
                 onClick={() => {
                   dispatch(changeNotifications(true));
                 }}
@@ -103,26 +63,9 @@ const Menu = () => {
                 <h3>Włączone</h3>
               </div>
             )}
-            {/* <div
-              className={
-                notifications === true
-                  ? "button-concave concave"
-                  : "button-concave"
-              }
-              className={darkMode === false ? "menu" : "menu-dark"}
-              onClick={() => {
-                dispatch(changeNotifications(true));
-              }}
-            >
-              <h3>Włączone</h3>
-            </div> */}
             {darkMode === false ? (
               <div
-                className={
-                  notifications === false
-                    ? "button-concave concave"
-                    : "button-concave"
-                }
+                className={notifications === false ? "button-concave concave" : "button-concave"}
                 onClick={() => {
                   dispatch(changeNotifications(false));
                 }}
@@ -131,11 +74,7 @@ const Menu = () => {
               </div>
             ) : (
               <div
-                className={
-                  notifications === false
-                    ? "button-concave-dark concave-dark"
-                    : "button-concave-dark"
-                }
+                className={notifications === false ? "button-concave-dark concave-dark" : "button-concave-dark"}
                 onClick={() => {
                   dispatch(changeNotifications(false));
                 }}
@@ -143,42 +82,16 @@ const Menu = () => {
                 <h3>Wyłączone</h3>
               </div>
             )}
-            {/* <div
-
-              className={
-                notifications === false
-                  ? "button-concave concave"
-                  : "button-concave"
-              }
-
-              onClick={() => {
-                dispatch(changeNotifications(false));
-              }}
-            >
-              <h3>Wyłączone</h3>
-            </div> */}
           </div>
         </div>
-        <div
-          className={
-            darkMode === false
-              ? "convex menu-option1"
-              : "convex-dark menu-option1-dark"
-          }
-          style={{ marginBottom: "10px" }}
-        >
-          <div className={darkMode === false ? "menu-name" : "menu-name-dark"}>
+        <div className={darkMode === false ? "convex menu-option1" : "convex-dark menu-option1"} style={{ marginBottom: "10px" }}>
+          <div className={darkMode === false ? "menu-name" : "menu-name menu-name-dark"}>
             <TimePast darkMode={darkMode} />
             <h3>Historia</h3>
           </div>
 
           <Link to="/history">
-            <div
-              className={
-                darkMode === false ? "convex-icon" : "convex-icon-dark"
-              }
-              style={{ width: "30px", height: "30px" }}
-            >
+            <div className={darkMode === false ? "convex-icon w30" : "convex-icon-dark w30"}>
               <AngleSmallRight darkMode={darkMode} />
             </div>
           </Link>

@@ -5,29 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { changeActualList } from "../../actions/actions";
 import { Link } from "react-router-dom";
 import { Plus } from "../../icons/All";
-import {
-  ListCheck,
-  ShoppingBag,
-  Backpack,
-  Plane,
-  Book,
-  Dollar,
-  Edit,
-  Beer,
-  CakeBirthday,
-  Flag,
-  Gamepad,
-  Gift,
-  Gym,
-  Hamburger,
-  HearthArrow,
-  Medicine,
-  MusicAlt,
-  Paw,
-  Thumbtack,
-  Trophy,
-  VideoCamera,
-} from "../../list-icons/All";
+import { ListCheck, ShoppingBag, Backpack, Plane, Book, Dollar, Edit, Beer, CakeBirthday, Flag, Gamepad, Gift, Gym, Hamburger, HearthArrow, Medicine, MusicAlt, Paw, Thumbtack, Trophy, VideoCamera } from "../../list-icons/All";
 
 function returnIcon(icon, darkMode) {
   switch (icon) {
@@ -77,24 +55,11 @@ function returnIcon(icon, darkMode) {
       return null;
   }
 }
-// function darkMode() {
-//   let convex = document.getElementsByClassName("convex");
-//   // console.log(convex);
-//   console.log(convex.length);
-//   for (let i = 0; i < convex.length; i++) {
-//     convex[i].className = "convex-dark";
-//     console.log(convex[i].className);
-//   }
-// }
-// darkMode();
 const SingleList = (props) => {
   const dispatch = useDispatch();
-  let darkMode = useSelector((state) => state.darkMode);
   return (
     <div
-      className={
-        darkMode === false ? "convex list-topic" : "convex-dark list-topic-dark"
-      }
+      className={props.darkMode === false ? "convex list-topic" : "convex-dark list-topic list-topic-dark"}
       onClick={() => {
         dispatch(changeActualList(props.id));
       }}
@@ -102,10 +67,13 @@ const SingleList = (props) => {
       <h3>{props.name}</h3>
       <Link to="/exercises" className="link">
         <div
-          className={darkMode === false ? "convex-icon" : "convex-icon-dark"}
-          style={{ width: "80px", height: "80px" }}
+          className={props.darkMode === false ? "convex-icon" : "convex-icon-dark"}
+          style={{
+            width: "80px",
+            height: "80px",
+          }}
         >
-          {returnIcon(props.icon, darkMode)}
+          {returnIcon(props.icon, props.darkMode)}
         </div>
       </Link>
     </div>
@@ -118,26 +86,14 @@ const List = () => {
     <>
       <Nav text="Lista zadań" />
 
-      <div className={darkMode === false ? "list" : "list-dark"}>
+      <div className="list">
         {lists.map((list, id) => {
-          return (
-            <SingleList name={list.name} key={id} id={id} icon={list.icon} />
-          );
+          return <SingleList name={list.name} key={id} id={id} icon={list.icon} darkMode={darkMode} />;
         })}
 
-        <div
-          className={
-            darkMode === false
-              ? "convex list-topic"
-              : "convex-dark list-topic-dark"
-          }
-        >
+        <div className={darkMode === false ? "convex list-topic" : "convex-dark list-topic list-topic-dark"}>
           <Link to="/add-list" className="link">
-            <div
-              className={
-                darkMode === false ? "convex-icon w80" : "convex-icon-dark w80"
-              }
-            >
+            <div className={darkMode === false ? "convex-icon w80" : "convex-icon-dark w80"}>
               <Plus darkMode={darkMode} />
             </div>
           </Link>

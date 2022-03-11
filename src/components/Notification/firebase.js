@@ -18,7 +18,6 @@ const messaging = getMessaging();
 
 export const requestForToken = () => {
   console.log("requestForToken");
-  alert("requestForToken");
   return getToken(messaging, {
     vapidKey:
       "BG-3is361JsaNHEsPFAQHXfQCsk08a06go_EUe1vsK71lC67tfWn6f4_P_kkbC8JR1wOCnh_qTwg6MYscShk_1g",

@@ -3,12 +3,7 @@ import "./addList.scss";
 import "../Menu/menu.scss";
 
 import { Balloons, CrossSmall, Layers } from "../../icons/All";
-import {
-  changeFormName,
-  changeFormType,
-  changeFormIcon,
-  resetForm,
-} from "../../actions/actions";
+import { changeFormName, changeFormType, changeFormIcon, resetForm } from "../../actions/actions";
 import {
   Backpack,
   Beer,
@@ -72,34 +67,15 @@ const AddList = () => {
     <>
       <div className={darkMode === false ? "add-list" : "add-list-dark"}>
         <Link to="/">
-          <div
-            className={
-              darkMode === false ? "cross-container" : "cross-container-dark"
-            }
-          >
-            <div
-              className={
-                darkMode === false ? "convex-icon" : "convex-icon-dark"
-              }
-              style={{ width: "50px", height: "50px" }}
-            >
+          <div className={darkMode === false ? "cross-container" : " cross-container cross-container-dark"}>
+            <div className={darkMode === false ? "convex-icon w50" : "convex-icon-dark w50"}>
               <CrossSmall darkMode={darkMode} />
             </div>
           </div>
         </Link>
 
-        <div
-          className={
-            darkMode === false ? "form-container" : "form-container-dark"
-          }
-        >
-          <div
-            className={
-              darkMode === false
-                ? "concave add-list-name"
-                : "concave-dark add-list-name-dark"
-            }
-          >
+        <div className={darkMode === false ? "form-container" : "form-container form-container-dark"}>
+          <div className={darkMode === false ? "concave add-list-name" : "concave-dark add-list-name add-list-name-dark"}>
             <input
               type="text"
               className={darkMode === false ? "input-text" : "input-text-dark"}
@@ -109,37 +85,17 @@ const AddList = () => {
               }}
             />
           </div>
-          <div
-            className={
-              darkMode === false
-                ? "convex add-list-type"
-                : "convex-dark add-list-type-dark"
-            }
-          >
-            <div
-              className={
-                darkMode === false ? "type-container" : "type-container-dark"
-              }
-            >
+          <div className={darkMode === false ? "convex add-list-type" : "convex-dark add-list-type"}>
+            <div className="type-container">
               <div className="center w50">
                 <Layers darkMode={darkMode} />
               </div>
               <h3>Typ</h3>
             </div>
-            <div
-              className={
-                darkMode === false
-                  ? "add-list-button-container"
-                  : "add-list-button-container-dark"
-              }
-            >
+            <div className="add-list-button-container">
               {darkMode === false ? (
                 <div
-                  className={
-                    form.type === "list"
-                      ? "button-concave concave"
-                      : "button-concave "
-                  }
+                  className={form.type === "list" ? "button-concave concave" : "button-concave "}
                   onClick={() => {
                     dispatch(changeFormType("list"));
                   }}
@@ -148,11 +104,7 @@ const AddList = () => {
                 </div>
               ) : (
                 <div
-                  className={
-                    form.type === "list"
-                      ? "button-concave-dark concave-dark"
-                      : "button-concave-dark "
-                  }
+                  className={form.type === "list" ? "button-concave concave-dark" : "button-concave"}
                   onClick={() => {
                     dispatch(changeFormType("list"));
                   }}
@@ -162,11 +114,7 @@ const AddList = () => {
               )}
               {darkMode === false ? (
                 <div
-                  className={
-                    form.type === "note"
-                      ? "button-concave concave"
-                      : "button-concave "
-                  }
+                  className={form.type === "note" ? "button-concave concave" : "button-concave "}
                   onClick={() => {
                     dispatch(changeFormType("note"));
                   }}
@@ -175,11 +123,7 @@ const AddList = () => {
                 </div>
               ) : (
                 <div
-                  className={
-                    form.type === "note"
-                      ? "button-concave-dark concave-dark"
-                      : "button-concave-dark "
-                  }
+                  className={form.type === "note" ? "button-concave concave-dark" : "button-concave"}
                   onClick={() => {
                     dispatch(changeFormType("note"));
                   }}
@@ -189,24 +133,14 @@ const AddList = () => {
               )}
             </div>
           </div>
-          <div
-            className={
-              darkMode === false
-                ? "convex add-list-icons"
-                : "convex-dark add-list-icons-dark"
-            }
-          >
-            <div
-              className={
-                darkMode === false ? "icon-container" : "icon-container-dark"
-              }
-            >
+          <div className={darkMode === false ? "convex add-list-icons" : "convex-dark add-list-icons"}>
+            <div className="icon-container">
               <div className="center w50">
                 <Balloons darkMode={darkMode} />
               </div>
               <h3>Ikona</h3>
             </div>
-            <div className={darkMode === false ? "icons" : "icons-dark"}>
+            <div className="icons">
               {components.map((component, id) => {
                 return (
                   <div
@@ -223,13 +157,7 @@ const AddList = () => {
               })}
             </div>
           </div>
-          <div
-            className={
-              darkMode === false
-                ? "convex add-list-button"
-                : "convex-dark add-list-button-dark"
-            }
-          >
+          <div className={darkMode === false ? "convex add-list-button" : "convex-dark add-list-button"}>
             <Link className="link" to="/">
               <h3
                 onClick={() => {

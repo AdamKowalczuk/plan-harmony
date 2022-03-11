@@ -6,13 +6,9 @@ $green: #05de8b;
 .menu {
   display: flex;
   justify-content: center;
-
   flex-direction: column;
   align-items: center;
-  // height: calc(100vh - 70px);
-  // overflow: scroll;
   overflow: hidden;
-  // height: auto;
   margin-top: 70px;
   .menu-option1 {
     display: flex;
@@ -68,67 +64,29 @@ $green: #05de8b;
 }
 
 //dark-mode
-
 .menu-dark {
-  display: flex;
-  justify-content: center;
-
-  flex-direction: column;
-  align-items: center;
-  // height: calc(100vh - 70px);
-  // overflow: scroll;
-  overflow: hidden;
-  // height: auto;
-  margin-top: 70px;
-  .menu-option1-dark {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: calc(86% - 40px);
-    padding: 10px 20px;
-    margin-top: 25px;
+  .menu-option1 {
     .menu-name-dark {
-      display: flex;
-      align-items: center;
       h3 {
-        margin-left: 10px;
         color: $green;
       }
     }
   }
-  .menu-option2-dark {
-    display: flex;
-    flex-direction: column;
-    width: calc(86% - 40px);
-    padding: 10px 20px;
-    margin-top: 25px;
+  .menu-option2 {
     .menu-name-dark {
-      display: flex;
-      align-items: center;
       h3 {
-        margin-left: 10px;
         color: $green;
       }
     }
     .menu-button-container-dark {
-      margin-top: 10px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
+      h3 {
+        color: $green;
+      }
       .button-concave-dark {
         display: flex;
         justify-content: center;
         width: 45%;
       }
-      h3 {
-        color: $green;
-      }
     }
-  }
-  .menu-icon-dark {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
   }
 }

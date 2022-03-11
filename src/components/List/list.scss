@@ -5,8 +5,6 @@ $green: #05de8b;
 .list {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-evenly;
-  // height: calc(100vh - 70px);
   overflow: scroll;
   margin-top: 70px;
   .link {
@@ -23,7 +21,6 @@ $green: #05de8b;
   svg {
     width: 40px;
     height: 40px;
-    // fill: $pink;
   }
 }
 .list-topic:nth-child(odd) {
@@ -39,38 +36,11 @@ $green: #05de8b;
 }
 
 //dark mode
-.list-dark {
-  display: flex;
-  flex-wrap: wrap;
-  // justify-content: space-evenly;
-  // height: calc(100vh - 70px);
-  overflow: scroll;
-  margin-top: 70px;
-  .link {
-    margin: 3% 3% 3% 7%;
-  }
-}
 .list-topic-dark {
-  width: 40vw;
-  height: 40vw;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
   svg {
-    width: 40px;
-    height: 40px;
     fill: $green;
   }
 }
-.list-topic-dark:nth-child(odd) {
-  margin: 3% 3% 3% 7%;
-}
-.list-topic-dark:nth-child(even) {
-  margin: 3% 7% 3% 3%;
-}
 .list-topic-dark h3 {
-  margin-top: 5px;
-  margin-bottom: 0px;
   color: $green;
 }
