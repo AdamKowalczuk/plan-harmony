@@ -26,6 +26,8 @@ const Notification = () => {
     title: "",
     body: "",
     image: "",
+    hej: "",
+    hej2: "hej2",
   });
   const notify = () => toast(<ToastDisplay />);
   function ToastDisplay() {
@@ -37,6 +39,8 @@ const Notification = () => {
         <p>Dzisiaj wykonałeś</p>
         <Trophy />
         <b>{checkTodayFinished()} zadań</b> */}
+        <b>{notification?.hej}</b>
+        <b>{notification?.hej2}</b>
         <p>
           <b>HEH {notification?.title}</b>
         </p>
@@ -72,6 +76,7 @@ const Notification = () => {
         title: payload?.notification?.title,
         body: payload?.notification?.body,
         image: payload?.notification?.image,
+        hej: hej,
       });
     })
     .catch((err) => console.log("failed: ", err));
