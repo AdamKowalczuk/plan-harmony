@@ -54,7 +54,8 @@ let list = [
     finishedExercises: [],
   },
 ];
-let newList;
+let newList, newExercises;
+
 const lists = (lists = list, action) => {
   switch (action.type) {
     case ADD_TO_LIST:
@@ -77,10 +78,8 @@ const lists = (lists = list, action) => {
       newList = lists;
       return lists.map((list, id) => {
         if (id === action.actualList) {
-          let isCompleted =
-            newList[action.actualList].exercises[action.id].isCompleted;
-          newList[action.actualList].exercises[action.id].isCompleted =
-            !isCompleted;
+          let isCompleted = newList[action.actualList].exercises[action.id].isCompleted;
+          newList[action.actualList].exercises[action.id].isCompleted = !isCompleted;
         }
         return list;
       });
@@ -110,33 +109,15 @@ const lists = (lists = list, action) => {
         return list;
       });
     case DELETE_COMPLETED_EXERCISES:
-      // newList = lists;
-      // newList[action.actualList].exercises.map((exercise, id) => {
-      //   if (exercise.isCompleted === true) {
-
-      //     newList[action.actualList].exercises.splice(id, 1);
-      //   }
-      //   // return exercise;
-      // });
-      // return newList;
-      let i = 0;
       newList = lists;
-      return newList[action.actualList].exercises.map((list, id) => {
-        if (list.isCompleted === true) {
-          console.log(list, id);
-          list.splice(id, 1);
+      newExercises = [];
+      lists[action.actualList].exercises.map((list, id) => {
+        if (list.isCompleted === false) {
+          newExercises.push(list);
         }
-
-        //popraw !!!!!!!!!!!!!!
-        // return newList[action.actualList];
       });
-    // return lists[action.actualList].exercises.map((exercise, id) => {
-    //   if (exercise.isCompleted === true) {
-    //     lists[action.actualList].exercises.splice(id, 1);
-    //   }
-    //   return exercise;
-    // });
-    // return lists;
+      lists[action.actualList].exercises = newExercises;
+      return [...lists];
     default:
       return lists;
   }

@@ -1,4 +1,5 @@
-import { ADD_TO_HISTORY, DELETE_FROM_HISTORY } from "../constants/actionTypes";
+import { log } from "react-modal/lib/helpers/ariaAppHider";
+import { ADD_TO_HISTORY, DELETE_FROM_HISTORY, DELETE_ITEM_FROM_HISTORY } from "../constants/actionTypes";
 let newHistory;
 const history = (actualHistory = [], action) => {
   switch (action.type) {
@@ -38,6 +39,14 @@ const history = (actualHistory = [], action) => {
     //   }
     //   return item;
     // });
+    case DELETE_ITEM_FROM_HISTORY:
+      newHistory = actualHistory;
+      newHistory.map((item, id) => {
+        if (item.name === action.name && item.listName === action.listName) {
+          newHistory.splice(id, 1);
+        }
+      });
+      return newHistory;
     default:
       return actualHistory;
   }

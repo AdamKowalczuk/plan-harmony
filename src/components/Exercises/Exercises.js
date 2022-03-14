@@ -12,11 +12,14 @@ import {
   resetNewExerciseInput,
   editNote,
   deleteExercise,
+  subtractFromNumber,
+  deleteItemFromHistory,
   addNewExercise,
   addToHistory,
   addToNumber,
   changeExerciseToComplete,
 } from "../../actions/actions";
+import { log } from "react-modal/lib/helpers/ariaAppHider";
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -61,13 +64,27 @@ const SingleExercise = (props) => {
         animate={props.animate ? "visible" : "visible"}
         key="modal"
         className={darkMode === false ? "convex single-exercise" : "convex-dark single-exercise single-exercise-dark"}
-        onClick={() => {
-          setDelete(true);
-          dispatch(addToHistory(props.name, date, lists[actualList].name));
-          dispatch(changeExerciseToComplete(actualList, props.id));
-          // dispatch(deleteExercise(actualList, props.id));
-          dispatch(addToNumber(finishedTask));
-        }}
+        onClick={
+          props.isCompleted
+            ? () => {
+                setDelete(true);
+                dispatch(deleteItemFromHistory(props.name, lists[actualList].name));
+                dispatch(changeExerciseToComplete(actualList, props.id));
+                dispatch(subtractFromNumber(finishedTask));
+              }
+            : () => {
+                setDelete(true);
+                dispatch(addToHistory(props.name, date, lists[actualList].name));
+                dispatch(changeExerciseToComplete(actualList, props.id));
+                dispatch(addToNumber(finishedTask));
+              }
+        }
+        // onClick={() => {
+        //   setDelete(true);
+        //   dispatch(addToHistory(props.name, date, lists[actualList].name));
+        //   dispatch(changeExerciseToComplete(actualList, props.id));
+        //   dispatch(addToNumber(finishedTask));
+        // }}
       >
         <div className={darkMode === false ? "concave w40 animated-button" : "concave-dark w40 animated-button"}>
           {props.isCompleted ? <Check darkMode={darkMode} /> : null}
@@ -115,7 +132,7 @@ const Exercises = () => {
 
   return (
     <>
-      <Nav2 text={lists[actualList].name} />
+      <Nav2 text={lists[actualList].name} type={lists[actualList].type} />
       {lists[actualList].type === "list" ? (
         <>
           <motion.div className={darkMode === false ? "exercises" : "exercises exercises-dark"}>

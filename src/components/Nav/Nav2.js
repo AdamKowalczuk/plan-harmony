@@ -48,32 +48,35 @@ const Nav2 = (props) => {
             <div className={darkMode === false ? "convex" : "convex-dark"}>
               {/* <h3>Usuń wykonane zadania</h3> */}
               <div className={darkMode === false ? "modal-with-icons" : " modal-with-icons modal-with-icons-dark"}>
-                <div
-                  onClick={() => {
-                    dispatch(deleteCompletedExercises(actualList));
-                    closeModal();
-                  }}
-                  className={darkMode === false ? "modal-row" : "modal-row modal-row-dark"}
-                >
-                  <div className={darkMode === false ? "convex-icon w50" : "convex-icon-dark w50"}>
+                {props.type === "list" ? (
+                  <div
+                    onClick={() => {
+                      dispatch(deleteCompletedExercises(actualList));
+                      closeModal();
+                    }}
+                    className={darkMode === false ? "modal-row" : "modal-row modal-row-dark"}
+                  >
+                    {/* <div className={darkMode === false ? "convex-icon w50" : "convex-icon-dark w50"}>
                     <Delete darkMode={darkMode} />
+                  </div> */}
+                    <h3>Usuń wykonane zadania</h3>
                   </div>
-                  <h3>Usuń wykonane zadania</h3>
-                </div>
+                ) : null}
 
                 <Link to="/edit-list" className="link">
                   <div className={darkMode === false ? "modal-row" : "modal-row modal-row-dark"}>
-                    <div className={darkMode === false ? "convex-icon w50" : "convex-icon-dark w50"}>
+                    {/* <div className={darkMode === false ? "concave-icon w50" : "convex-icon-dark w50"}>
                       <Edit darkMode={darkMode} />
-                    </div>
+                    </div> */}
+
                     <h3>Edytuj listę</h3>
                   </div>
                 </Link>
 
                 <div className={darkMode === false ? "modal-row" : "modal-row modal-row-dark"} onClick={openModal2}>
-                  <div className={darkMode === false ? "convex-icon w50" : "convex-icon-dark w50"}>
+                  {/* <div className={darkMode === false ? "convex-icon w50" : "convex-icon-dark w50"}>
                     <Trash darkMode={darkMode} />
-                  </div>
+                  </div> */}
                   <h3>Usuń listę</h3>
                 </div>
               </div>

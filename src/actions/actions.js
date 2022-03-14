@@ -59,6 +59,20 @@ export const deleteExercise = (actualList, id) => {
     id: id,
   };
 };
+export const subtractFromNumber = (finishedTask) => {
+  return {
+    type: "SUBTRACT_FROM_NUMBER",
+    payload: finishedTask - 1,
+  };
+};
+export const deleteItemFromHistory = (name, listName) => {
+  return {
+    type: "DELETE_ITEM_FROM_HISTORY",
+    name: name,
+    listName: listName,
+  };
+};
+
 export const deleteCompletedExercises = (actualList) => {
   return {
     type: "DELETE_COMPLETED_EXERCISES",

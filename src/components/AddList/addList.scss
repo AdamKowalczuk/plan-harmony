@@ -37,6 +37,7 @@ $green: #05de8b;
     .type-container {
       display: flex;
       justify-content: center;
+      align-items: center;
       img {
         width: 30px;
       }
@@ -166,25 +167,28 @@ $green: #05de8b;
 .modal-with-icons {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   a {
     width: 100%;
     color: $gray;
+    margin-left: -20px;
+    .modal-row {
+      h3 {
+        text-align: center;
+      }
+    }
   }
   .modal-row {
     display: flex;
     align-items: center;
-    padding: 5px;
+    justify-content: center;
+    padding: 10px;
     border-radius: 10px;
     background: #e4ebf5;
     box-shadow: 5px 5px 10px #c8d0e7, -5px -5px 10px #ffffff;
     width: 100%;
     margin: 15px 0;
     color: $gray;
-    div {
-      margin: 5px;
-      margin-right: 15px;
-    }
   }
 }
 
@@ -244,6 +248,7 @@ $green: #05de8b;
   a {
     width: 100%;
     color: $green;
+    margin-left: -20px;
   }
   .modal-row-dark {
     background: #262c2c;
@@ -252,6 +257,7 @@ $green: #05de8b;
     color: $green;
     h3 {
       color: $green;
+      text-align: center;
     }
   }
 }
