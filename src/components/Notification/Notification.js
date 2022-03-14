@@ -41,10 +41,12 @@ const Notification = () => {
           <b>HEH {notification?.title}</b>
         </p>
         <p>{notification?.body}</p>
-        <p>{checkTodayFinished()} zadań</p>
-        <img src={notification?.image} alt="notification" />
-        <Trophy />
-        <b>{checkTodayFinished()} zadań</b>
+        <p>
+          {checkTodayFinished()} {notification?.title}
+        </p>
+        {/* <img src={notification?.image} alt="notification" /> */}
+        {/* <Trophy />
+        <b>{checkTodayFinished()} zadań</b> */}
         {/* <p>
           <b>{notification?.title}</b>
         </p>
