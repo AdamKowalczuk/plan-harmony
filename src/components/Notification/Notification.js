@@ -62,7 +62,7 @@ const Notification = () => {
 
   onMessageListener()
     .then((payload) => {
-      alert(console.log(payload?.notification?.title));
+      // alert(console.log(payload?.notification?.title));
 
       setNotification({
         title: payload?.notification?.title,
