@@ -17,20 +17,17 @@ initializeApp(firebaseConfig);
 const messaging = getMessaging();
 
 export const requestForToken = () => {
-  console.log("requestForToken");
   return getToken(messaging, {
-    vapidKey:
-      "BG-3is361JsaNHEsPFAQHXfQCsk08a06go_EUe1vsK71lC67tfWn6f4_P_kkbC8JR1wOCnh_qTwg6MYscShk_1g",
+    vapidKey: "BG-3is361JsaNHEsPFAQHXfQCsk08a06go_EUe1vsK71lC67tfWn6f4_P_kkbC8JR1wOCnh_qTwg6MYscShk_1g",
   })
     .then((currentToken) => {
       if (currentToken) {
         console.log("current token for client: ", currentToken);
+        alert(currentToken);
         // Perform any other neccessary action with the token
       } else {
         // Show permission request UI
-        console.log(
-          "No registration token available. Request permission to generate one."
-        );
+        console.log("No registration token available. Request permission to generate one.");
       }
     })
     .catch((err) => {

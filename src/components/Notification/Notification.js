@@ -29,7 +29,6 @@ const Notification = () => {
   });
   const notify = () => toast(<ToastDisplay />);
   function ToastDisplay() {
-    alert("TOAST");
     return (
       <div className="notification">
         <p>
@@ -57,7 +56,8 @@ const Notification = () => {
 
   onMessageListener()
     .then((payload) => {
-      console.log(payload);
+      alert(console.log(ppayload?.notification?.title));
+
       setNotification({
         title: payload?.notification?.title,
         body: payload?.notification?.body,
