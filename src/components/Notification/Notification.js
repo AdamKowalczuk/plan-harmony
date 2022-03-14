@@ -31,10 +31,16 @@ const Notification = () => {
   function ToastDisplay() {
     return (
       <div className="notification">
-        <p>
+        {/* <p>
           <b>Gratulacje!</b>
         </p>
         <p>Dzisiaj wykonałeś</p>
+        <Trophy />
+        <b>{checkTodayFinished()} zadań</b> */}
+        <p>
+          <b>{notification?.title}</b>
+        </p>
+        <p>{notification?.body}</p>
         <Trophy />
         <b>{checkTodayFinished()} zadań</b>
         {/* <p>
