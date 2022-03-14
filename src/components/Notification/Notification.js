@@ -38,7 +38,7 @@ const Notification = () => {
         <Trophy />
         <b>{checkTodayFinished()} zadań</b> */}
         <p>
-          <b>{notification?.title}</b>
+          <b>HEH {notification?.title}</b>
         </p>
         <p>{notification?.body}</p>
         <p>{checkTodayFinished()} zadań</p>
