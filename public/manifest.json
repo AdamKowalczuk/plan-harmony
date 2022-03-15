@@ -1,11 +1,12 @@
 {
-  "short_name": "Aplikacja do planowania",
-  "name": "Aplikacja do planowania",
+  "short_name": "Plan Harmony",
+  "name": "Plan Harmony",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#262C2C",
   "background_color": "#262C2C",
   "orientation": "portrait-primary",
+  "description":"Aplikacja do tworzenia dziennego planera, organizowania zadań i celów oraz zapisywania notatek.",
   "icons":
   [
     {
