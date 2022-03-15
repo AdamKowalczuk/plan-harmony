@@ -26,36 +26,34 @@ const Notification = () => {
     title: "",
     body: "",
     image: "",
-    hej: "",
-    hej2: "hej2",
   });
   const notify = () => toast(<ToastDisplay />);
   function ToastDisplay() {
+    let exercise;
+    switch (checkTodayFinished()) {
+      case 1:
+        exercise = checkTodayFinished() + " zadanie";
+        break;
+      case 2:
+        exercise = checkTodayFinished() + " zadania";
+        break;
+      case 3:
+        exercise = checkTodayFinished() + " zadania";
+        break;
+      case 4:
+        exercise = checkTodayFinished() + " zadania";
+        break;
+      default:
+        exercise = checkTodayFinished() + " zadań";
+    }
     return (
       <div className="notification">
-        {/* <p>
+        <p>
           <b>Gratulacje!</b>
         </p>
         <p>Dzisiaj wykonałeś</p>
         <Trophy />
-        <b>{checkTodayFinished()} zadań</b> */}
-        <b>{notification?.hej}</b>
-        <b>{notification?.hej2}</b>
-        <p>
-          <b>HEH {notification?.title}</b>
-        </p>
-        <p>{notification?.body}</p>
-        <p>
-          {checkTodayFinished()} {notification?.title}
-        </p>
-        {/* <img src={notification?.image} alt="notification" /> */}
-        {/* <Trophy />
-        <b>{checkTodayFinished()} zadań</b> */}
-        {/* <p>
-          <b>{notification?.title}</b>
-        </p>
-        <p>{notification?.body}</p>
-        <img src={notification?.image} width="100px" alt="" /> */}
+        <b>{exercise}</b>
       </div>
     );
   }
@@ -70,13 +68,11 @@ const Notification = () => {
 
   onMessageListener()
     .then((payload) => {
-      // alert(console.log(payload?.notification?.title));
-
+      console.log(payload);
       setNotification({
         title: payload?.notification?.title,
         body: payload?.notification?.body,
         image: payload?.notification?.image,
-        hej: hej,
       });
     })
     .catch((err) => console.log("failed: ", err));
