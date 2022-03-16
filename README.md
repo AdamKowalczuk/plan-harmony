@@ -1,12 +1,12 @@
-# Plan Harmony
+# **Plan Harmony**
 
 ## Aplikacja do tworzenia dziennego planera, organizowania zadań i celów oraz zapisywania notatek. Aplikacja umożliwia dostęp do podglądu i analizowania swojej aktywności.
 
-### 🚀 Aplikacja wykorzystuje Neuromorfizm, czyli nadanie elementom interfejsu wrażenia wklęsłości oraz wypukłości
-### 🚀 Aplikacja posiada 2 motywy kolorystyczne: ciemny i jasny. 
-### 🚀 Aplikacja wykorzystuje technologię Push Notification
-### 🚀 Do pracy z datami wykorzystuje biblioteki Momemt.js oraz DateDiff
-### 🚀 Aplikacja jest stworzona w formacie Progressive web app dzięki czemu można ją zainstalować jak natywną aplikację mobilną.
+### - 🚀 Aplikacja wykorzystuje Neuromorfizm, czyli nadanie elementom interfejsu wrażenia wklęsłości oraz wypukłości
+### - 🚀 Aplikacja posiada 2 motywy kolorystyczne: ciemny i jasny. 
+### - 🚀 Aplikacja wykorzystuje technologię **Push Notification**
+### - 🚀 Do pracy z datami wykorzystuje biblioteki **Momemt.js** oraz **DateDiff**
+### - 🚀 Aplikacja jest stworzona w formacie **Progressive web app** dzięki czemu można ją zainstalować jak natywną aplikację mobilną.
 
 
 ## Zrzuty ekranu z aplikacji: 
