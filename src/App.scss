@@ -121,8 +121,7 @@ body {
 .concave-dark {
   border-radius: 10px;
   background: #262c2c;
-  box-shadow: inset 5px 5px 10px hsl(0, 0%, 4%, 100%),
-    inset -3px -3px 6px hsl(0, 0%, 100%, 25%);
+  box-shadow: inset 5px 5px 10px hsl(0, 0%, 4%, 100%), inset -3px -3px 6px hsl(0, 0%, 100%, 25%);
 }
 .input-text-dark {
   border: 0;

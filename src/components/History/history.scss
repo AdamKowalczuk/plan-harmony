@@ -2,6 +2,7 @@ $pink: #866dfa;
 $gray: #768eb9;
 $white: #ffffff;
 $green: #05de8b;
+
 .history {
   display: flex;
   justify-content: center;
@@ -190,7 +191,7 @@ $green: #05de8b;
       border-collapse: collapse;
       color: $green;
       .table-header-dark {
-        color: $green;
+        color: $white;
       }
       .table-header-dark:hover {
         background-color: #262c2c;
@@ -205,6 +206,27 @@ $green: #05de8b;
         background-color: $green;
         color: $white;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .history {
+    .history-convex {
+      width: 40vw;
+    }
+    .history-container {
+      width: 40vw;
+    }
+  }
+
+  //dark mode
+  .history-dark {
+    .history-convex-dark {
+      width: 40vw;
+    }
+    .history-container-dark {
+      width: 40vw;
     }
   }
 }

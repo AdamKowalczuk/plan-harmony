@@ -64,6 +64,7 @@ const EditList = () => {
     type: lists[actualList].type,
     icon: lists[actualList].icon,
     exercises: lists[actualList].exercises,
+    note: lists[actualList].note,
   };
   const [form, setForm] = useState(initialState);
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });

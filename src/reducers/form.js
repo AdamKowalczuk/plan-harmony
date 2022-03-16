@@ -1,11 +1,6 @@
-import {
-  CHANGE_FORM_NAME,
-  CHANGE_FORM_TYPE,
-  CHANGE_FORM_ICON,
-  RESET_FORM,
-} from "../constants/actionTypes";
+import { CHANGE_FORM_NAME, CHANGE_FORM_TYPE, CHANGE_FORM_ICON, RESET_FORM } from "../constants/actionTypes";
 
-const form = (actualForm = { name: "", type: "list", icon: "" }, action) => {
+const form = (actualForm = { name: "", type: "list", icon: "ListCheck", note: "", exercises: [] }, action) => {
   switch (action.type) {
     case CHANGE_FORM_NAME:
       return { ...actualForm, name: action.payload };
@@ -14,7 +9,7 @@ const form = (actualForm = { name: "", type: "list", icon: "" }, action) => {
     case CHANGE_FORM_ICON:
       return { ...actualForm, icon: action.payload };
     case RESET_FORM:
-      return { ...actualForm, name: "", type: "list", icon: "Backpack" };
+      return { ...actualForm, name: "", type: "list", icon: "ListCheck", note: "", exercises: [] };
     default:
       return actualForm;
   }

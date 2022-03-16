@@ -5,7 +5,29 @@ import { useSelector, useDispatch } from "react-redux";
 import { changeActualList } from "../../actions/actions";
 import { Link } from "react-router-dom";
 import { Plus } from "../../icons/All";
-import { ListCheck, ShoppingBag, Backpack, Plane, Book, Dollar, Edit, Beer, CakeBirthday, Flag, Gamepad, Gift, Gym, Hamburger, HearthArrow, Medicine, MusicAlt, Paw, Thumbtack, Trophy, VideoCamera } from "../../list-icons/All";
+import {
+  ListCheck,
+  ShoppingBag,
+  Backpack,
+  Plane,
+  Book,
+  Dollar,
+  Edit,
+  Beer,
+  CakeBirthday,
+  Flag,
+  Gamepad,
+  Gift,
+  Gym,
+  Hamburger,
+  HearthArrow,
+  Medicine,
+  MusicAlt,
+  Paw,
+  Thumbtack,
+  Trophy,
+  VideoCamera,
+} from "../../list-icons/All";
 
 function returnIcon(icon, darkMode) {
   switch (icon) {
@@ -82,9 +104,10 @@ const SingleList = (props) => {
 const List = () => {
   let lists = useSelector((state) => state.lists);
   let darkMode = useSelector((state) => state.darkMode);
+
   return (
     <>
-      <Nav text="Lista zadań" />
+      <Nav text="Twoje listy" />
 
       <div className="list">
         {lists.map((list, id) => {

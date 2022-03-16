@@ -19,7 +19,6 @@ import {
   addToNumber,
   changeExerciseToComplete,
 } from "../../actions/actions";
-import { log } from "react-modal/lib/helpers/ariaAppHider";
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -62,7 +61,7 @@ const SingleExercise = (props) => {
         variants={containerVariants}
         initial={props.animate ? "hidden" : "visible"}
         animate={props.animate ? "visible" : "visible"}
-        key="modal"
+        key={props.id}
         className={darkMode === false ? "convex single-exercise" : "convex-dark single-exercise single-exercise-dark"}
         onClick={
           props.isCompleted
@@ -147,11 +146,7 @@ const Exercises = () => {
             ) : (
               <>
                 {lists[actualList].exercises.map((exercise, id) => {
-                  return (
-                    <>
-                      <SingleExercise animate={animate} name={exercise.name} isCompleted={exercise.isCompleted} id={id} key={id} />
-                    </>
-                  );
+                  return <SingleExercise animate={animate} name={exercise.name} isCompleted={exercise.isCompleted} id={id} key={id} />;
                 })}
               </>
             )}

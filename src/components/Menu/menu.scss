@@ -3,89 +3,181 @@ $gray: #768eb9;
 $white: #ffffff;
 $green: #05de8b;
 
-.menu {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  margin-top: 70px;
-  .menu-option1 {
+@media only screen and (max-width: 1000px) {
+  .menu {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: calc(86% - 40px);
-    padding: 10px 20px;
-    margin-top: 25px;
-    .menu-name {
-      display: flex;
-      align-items: center;
-      h3 {
-        margin-left: 10px;
-        color: $gray;
-      }
-    }
-  }
-  .menu-option2 {
-    display: flex;
+    justify-content: center;
     flex-direction: column;
-    width: calc(86% - 40px);
-    padding: 10px 20px;
-    margin-top: 25px;
-    .menu-name {
+    align-items: center;
+    overflow: hidden;
+    margin-top: 70px;
+    .menu-option1 {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      h3 {
-        margin-left: 10px;
-        color: $gray;
+      justify-content: space-between;
+      width: calc(86% - 40px);
+      padding: 10px 20px;
+      margin-top: 25px;
+      .menu-name {
+        display: flex;
+        align-items: center;
+        h3 {
+          margin-left: 10px;
+          color: $gray;
+        }
       }
     }
-    .menu-button-container {
-      margin-top: 10px;
-      width: 100%;
+    .menu-option2 {
       display: flex;
-      justify-content: space-between;
-      .button-concave {
+      flex-direction: column;
+      width: calc(86% - 40px);
+      padding: 10px 20px;
+      margin-top: 25px;
+      .menu-name {
         display: flex;
-        justify-content: center;
-        width: 45%;
+        align-items: center;
+        h3 {
+          margin-left: 10px;
+          color: $gray;
+        }
       }
-      h3 {
-        color: $gray;
+      .menu-button-container {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .button-concave {
+          display: flex;
+          justify-content: center;
+          width: 45%;
+        }
+        h3 {
+          color: $gray;
+        }
       }
+    }
+    .menu-icon {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
     }
   }
-  .menu-icon {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
+
+  //dark-mode
+  .menu-dark {
+    .menu-option1 {
+      .menu-name-dark {
+        h3 {
+          color: $green;
+        }
+      }
+    }
+    .menu-option2 {
+      .menu-name-dark {
+        h3 {
+          color: $green;
+        }
+      }
+      .menu-button-container-dark {
+        h3 {
+          color: $green;
+        }
+        .button-concave-dark {
+          display: flex;
+          justify-content: center;
+          width: 45%;
+        }
+      }
+    }
   }
 }
 
-//dark-mode
-.menu-dark {
-  .menu-option1 {
-    .menu-name-dark {
-      h3 {
-        color: $green;
+@media only screen and (min-width: 1000px) {
+  .menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 70px;
+    .menu-option1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 40vw;
+      padding: 10px 20px;
+      margin-top: 25px;
+      .menu-name {
+        display: flex;
+        align-items: center;
+        h3 {
+          margin-left: 10px;
+          color: $gray;
+        }
       }
+    }
+    .menu-option2 {
+      display: flex;
+      flex-direction: column;
+      width: 40vw;
+      padding: 10px 20px;
+      margin-top: 25px;
+      .menu-name {
+        display: flex;
+        align-items: center;
+        h3 {
+          margin-left: 10px;
+          color: $gray;
+        }
+      }
+      .menu-button-container {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .button-concave {
+          display: flex;
+          justify-content: center;
+          width: 45%;
+        }
+        h3 {
+          color: $gray;
+        }
+      }
+    }
+    .menu-icon {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
     }
   }
-  .menu-option2 {
-    .menu-name-dark {
-      h3 {
-        color: $green;
+
+  //dark-mode
+  .menu-dark {
+    .menu-option1 {
+      .menu-name-dark {
+        h3 {
+          color: $green;
+        }
       }
     }
-    .menu-button-container-dark {
-      h3 {
-        color: $green;
+    .menu-option2 {
+      .menu-name-dark {
+        h3 {
+          color: $green;
+        }
       }
-      .button-concave-dark {
-        display: flex;
-        justify-content: center;
-        width: 45%;
+      .menu-button-container-dark {
+        h3 {
+          color: $green;
+        }
+        .button-concave-dark {
+          display: flex;
+          justify-content: center;
+          width: 45%;
+        }
       }
     }
   }

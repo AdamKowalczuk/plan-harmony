@@ -2,45 +2,105 @@ $pink: #866dfa;
 $gray: #768eb9;
 $white: #ffffff;
 $green: #05de8b;
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: scroll;
-  margin-top: 70px;
-  .link {
+
+@media only screen and (max-width: 1000px) {
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    margin-top: 70px;
+    padding: 10px 0;
+    .link {
+      margin: 3% 3% 3% 7%;
+    }
+  }
+  .list-topic {
+    width: 40vw;
+    height: 40vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .list-topic:nth-child(odd) {
     margin: 3% 3% 3% 7%;
   }
-}
-.list-topic {
-  width: 40vw;
-  height: 40vw;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  svg {
-    width: 40px;
-    height: 40px;
+  .list-topic:nth-child(even) {
+    margin: 3% 7% 3% 3%;
   }
-}
-.list-topic:nth-child(odd) {
-  margin: 3% 3% 3% 7%;
-}
-.list-topic:nth-child(even) {
-  margin: 3% 7% 3% 3%;
-}
-.list-topic h3 {
-  margin-top: 5px;
-  margin-bottom: 0px;
-  color: $gray;
+  .list-topic h3 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: $gray;
+    text-align: center;
+  }
+
+  //dark mode
+  .list-topic-dark {
+    svg {
+      fill: $green;
+    }
+  }
+  .list-topic-dark h3 {
+    color: $green;
+    text-align: center;
+  }
 }
 
-//dark mode
-.list-topic-dark {
-  svg {
-    fill: $green;
+@media only screen and (min-width: 1000px) {
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-evenly;
+
+    margin-top: 70px;
+    padding: 10px 0px;
+    .link {
+      margin: 3% 3% 3% 7%;
+    }
   }
-}
-.list-topic-dark h3 {
-  color: $green;
+  .list::-webkit-scrollbar {
+    display: none;
+  }
+  .list-topic {
+    width: 16vw;
+    height: 16vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin: 1.89vw;
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  // .list-topic:nth-child(odd) {
+  //   margin: 3% 3% 3% 7%;
+  // }
+  // .list-topic:nth-child(even) {
+  //   margin: 3% 7% 3% 3%;
+  // }
+  .list-topic h3 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: $gray;
+    text-align: center;
+  }
+
+  //dark mode
+  .list-topic-dark {
+    svg {
+      fill: $green;
+    }
+  }
+  .list-topic-dark h3 {
+    color: $green;
+    text-align: center;
+  }
 }

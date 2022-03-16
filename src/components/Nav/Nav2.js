@@ -14,7 +14,11 @@ const Nav2 = (props) => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [modalIsOpen2, setIsOpen2] = React.useState(false);
   function openModal() {
-    setIsOpen(true);
+    if (modalIsOpen === true) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
   }
 
   function closeModal() {
@@ -114,71 +118,7 @@ const Nav2 = (props) => {
             </div>
           </div>
         </Modal>
-        {/* {darkMode === false ? (
-          <Modal isOpen={modalIsOpen2} onRequestClose={closeModal2} className="Modal">
-            <Link to="/exercises">
-              <div className="cross-container" onClick={closeModal2}>
-                <div className="convex-icon w50">
-                  <CrossSmall darkMode={darkMode} />
-                </div>
-              </div>
-            </Link>
-            <div className="modal-container">
-              <div className="convex">
-                <h2>Czy na pewno chcesz usunąć tą listę?</h2>
-                <div className="modal-button-container">
-                  <Link to="/">
-                    <div
-                      className="convex add-list-button"
-                      onClick={() => {
-                        dispatch(deleteList(actualList));
-                      }}
-                    >
-                      <h3>Tak</h3>
-                    </div>
-                  </Link>
-                  <Link to="/exercises" onClick={closeModal2}>
-                    <div className="convex add-list-button">
-                      <h3>Nie</h3>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Modal>
-        ) : (
-          <Modal isOpen={modalIsOpen2} onRequestClose={closeModal2} className="Modal-dark">
-            <Link to="/exercises">
-              <div className="cross-container-dark" onClick={closeModal2}>
-                <div className="convex-icon-dark w50">
-                  <CrossSmall darkMode={darkMode} />
-                </div>
-              </div>
-            </Link>
-            <div className="modal-container-dark">
-              <div className="convex-dark">
-                <h2>Czy na pewno chcesz usunąć tą listę?</h2>
-                <div className="modal-button-container-dark">
-                  <Link to="/">
-                    <div
-                      className="convex-dark add-list-button-dark"
-                      onClick={() => {
-                        dispatch(deleteList(actualList));
-                      }}
-                    >
-                      <h3>Tak</h3>
-                    </div>
-                  </Link>
-                  <Link to="/exercises" onClick={closeModal2}>
-                    <div className="convex-dark add-list-button-dark">
-                      <h3>Nie</h3>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Modal>
-        )} */}
+
         {/* <Link to="/edit-list"> */}
         <div className={darkMode === false ? "convex-icon w50" : "convex-icon-dark w50"} onClick={openModal}>
           <Settings darkMode={darkMode} />

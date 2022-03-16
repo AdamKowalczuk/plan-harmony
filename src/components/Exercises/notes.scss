@@ -51,3 +51,18 @@ $green: #05de8b;
     color: $white;
   }
 }
+
+@media only screen and (min-width: 1000px) {
+  .notes {
+    textarea {
+      width: 40vw;
+    }
+  }
+
+  //dark mode
+  .notes-dark {
+    textarea {
+      width: 40vw;
+    }
+  }
+}

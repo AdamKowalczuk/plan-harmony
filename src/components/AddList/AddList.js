@@ -79,7 +79,7 @@ const AddList = () => {
             <input
               type="text"
               className={darkMode === false ? "input-text" : "input-text-dark"}
-              placeholder="Nazwa..."
+              placeholder="Nazwa listy..."
               onChange={(e) => {
                 dispatch(changeFormName(e.target.value));
               }}
@@ -161,7 +161,7 @@ const AddList = () => {
             <Link className="link" to="/">
               <h3
                 onClick={() => {
-                  dispatch(addToList({ ...form, exercises: [] }));
+                  dispatch(addToList({ ...form, exercises: [], note: "" }));
                   dispatch(resetForm());
                 }}
               >

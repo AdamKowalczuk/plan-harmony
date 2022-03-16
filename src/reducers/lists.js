@@ -16,42 +16,42 @@ let list = [
     icon: "ListCheck",
     type: "list",
     exercises: [],
-    finishedExercises: [],
+    note: "",
   },
   {
     name: "Lista zakupów",
     icon: "ShoppingBag",
     type: "list",
     exercises: [],
-    finishedExercises: [],
+    note: "",
   },
   {
     name: "Cele na rok",
     icon: "Plane",
     type: "list",
     exercises: [],
-    finishedExercises: [],
+    note: "",
   },
   {
     name: "Książki",
     icon: "Book",
     type: "list",
     exercises: [],
-    finishedExercises: [],
+    note: "",
   },
   {
     name: "Wydatki",
     icon: "Dollar",
     type: "list",
     exercises: [],
-    finishedExercises: [],
+    note: "",
   },
   {
     name: "Notatki",
     icon: "Edit",
     type: "note",
+    exercises: [],
     note: "",
-    finishedExercises: [],
   },
 ];
 let newList, newExercises;
@@ -83,7 +83,6 @@ const lists = (lists = list, action) => {
         }
         return list;
       });
-
     case EDIT_NOTE:
       newList = lists;
       newList[action.id].note = action.payload;
@@ -92,14 +91,6 @@ const lists = (lists = list, action) => {
       newList = lists;
       newList.splice(action.listId, 1);
       return newList;
-    // newList = lists;
-    // return lists.map((list, id) => {
-    //   if (id === action.listId) {
-    //     newList.splice(action.listId, 1);
-    //   }
-    //   return list;
-    // });
-
     case DELETE_EXERCISE:
       newList = lists;
       return lists.map((list, id) => {

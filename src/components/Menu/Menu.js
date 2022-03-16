@@ -9,7 +9,8 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.darkMode);
-  const notifications = useSelector((state) => state.notifications);
+  // const notifications = useSelector((state) => state.notifications);
+
   return (
     <>
       <Nav text="Menu" />
@@ -38,7 +39,7 @@ const Menu = () => {
             </div>
           </div>
         </div>
-        <div className={darkMode === false ? "convex menu-option2" : "convex-dark menu-option2"}>
+        {/* <div className={darkMode === false ? "convex menu-option2" : "convex-dark menu-option2"}>
           <div className={darkMode === false ? "menu-name" : "menu-name menu-name-dark"}>
             <BellRing darkMode={darkMode} />
             <h3>Powiadomienia</h3>
@@ -83,11 +84,11 @@ const Menu = () => {
               </div>
             )}
           </div>
-        </div>
+        </div> */}
         <div className={darkMode === false ? "convex menu-option1" : "convex-dark menu-option1"} style={{ marginBottom: "10px" }}>
           <div className={darkMode === false ? "menu-name" : "menu-name menu-name-dark"}>
             <TimePast darkMode={darkMode} />
-            <h3>Historia</h3>
+            <h3>Dziennik aktywności</h3>
           </div>
 
           <Link to="/history">

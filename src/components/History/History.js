@@ -106,7 +106,7 @@ const History = () => {
   let maxNumber = getMaxNumber(days);
   return (
     <>
-      <Nav text="Lista zadań" />
+      <Nav text="Dziennik aktywności" />
       <div className={darkMode === false ? "history" : "history-dark"}>
         <div className={darkMode === false ? "convex history-convex" : "convex-dark history-convex-dark"}>
           <h2 className={darkMode === false ? "gray" : "green"}>Wykres aktywności</h2>
@@ -180,7 +180,7 @@ const History = () => {
         <div className={darkMode === false ? "convex history-container" : "convex-dark history-container-dark"}>
           <h3>Wykonane zadania:</h3>
           {history.length === 0 ? (
-            <p>Brak</p>
+            <h3>Brak wykonanych zadań!</h3>
           ) : (
             <>
               <table className={darkMode === false ? "table" : "table-dark"}>
