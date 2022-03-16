@@ -27,4 +27,4 @@
 ![mobile (5)](https://user-images.githubusercontent.com/57939211/158562557-b6f1b012-288b-4a6b-b922-6ce2193a23fd.png)
 ![mobile (6)](https://user-images.githubusercontent.com/57939211/158562559-1c9d22b7-c26e-433a-9e21-850292ceb301.png)
 
-### Aplikacja będzie dostępna w sklepie Play
+### Aplikacja będzie dostępna w sklepie Google Play
