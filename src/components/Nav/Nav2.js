@@ -3,9 +3,9 @@ import "./nav.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { editList, deleteList, deleteCompletedExercises } from "../../actions/actions";
+import { deleteList, deleteCompletedExercises } from "../../actions/actions";
 import Modal from "react-modal";
-import { Home, Settings, Trash, Edit, Delete, CrossSmall } from "../../icons/All";
+import { Home, Settings, CrossSmall } from "../../icons/All";
 Modal.setAppElement("#root");
 const Nav2 = (props) => {
   const dispatch = useDispatch();

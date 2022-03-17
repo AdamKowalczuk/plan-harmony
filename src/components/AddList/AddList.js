@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./addList.scss";
-import "../Menu/menu.scss";
+// import "../Menu/menu.scss";
 
 import { Balloons, CrossSmall, Layers } from "../../icons/All";
 import { changeFormName, changeFormType, changeFormIcon, resetForm } from "../../actions/actions";

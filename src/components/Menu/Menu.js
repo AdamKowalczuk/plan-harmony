@@ -1,10 +1,10 @@
 import React from "react";
 import "./menu.scss";
 import Nav from "../Nav/Nav";
-import { changeMode, changeNotifications } from "../../actions/actions";
+import { changeMode } from "../../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-import { AngleSmallRight, TimePast, BellRing, Fill } from "../../icons/All";
+import { AngleSmallRight, TimePast, Fill } from "../../icons/All";
 import { Link } from "react-router-dom";
 const Menu = () => {
   const dispatch = useDispatch();

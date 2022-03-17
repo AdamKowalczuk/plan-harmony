@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { requestForToken, onMessageListener } from "./firebase";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Trophy } from "../../icons/All";
 import "./notification.scss";
 import moment from "moment";

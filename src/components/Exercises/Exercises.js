@@ -11,7 +11,6 @@ import {
   changeNewExerciseName,
   resetNewExerciseInput,
   editNote,
-  deleteExercise,
   subtractFromNumber,
   deleteItemFromHistory,
   addNewExercise,
