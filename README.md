@@ -4,7 +4,6 @@
 
 * 🚀 Aplikacja wykorzystuje Neuromorfizm, czyli nadanie elementom interfejsu wrażenia wklęsłości oraz wypukłości
 * 🚀 Aplikacja posiada 2 motywy kolorystyczne: ciemny i jasny. 
-* 🚀 Aplikacja wykorzystuje technologię **Push Notification**
 * 🚀 Do pracy z datami korzysta z biblioteki **Moment.js** oraz **DateDiff**
 * 🚀 Do tworzenia animacji korzysta z biblioteki **Framer Motion**
 * 🚀 Aplikacja jest stworzona w formacie **Progressive web app** dzięki czemu można ją zainstalować jak natywną aplikację mobilną.
